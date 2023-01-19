@@ -1,0 +1,32 @@
+.navigation {
+  grid-area: n;
+
+  background-color: rgba(231, 193, 251, 0.5);
+}
+
+.navigation ul {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  list-style: none;
+}
+
+.navigation a {
+  padding: 15px;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+}
+
+.navigation a:hover {
+  background-color: aliceblue;
+}
