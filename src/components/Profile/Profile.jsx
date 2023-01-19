@@ -8,7 +8,7 @@ function Profile() {
     <div className={c.profile}>
       <img src={IMG_SRC} alt='#'></img>
       <div>Ava + desc</div>
-      <MyPosts />
+      <MyPosts text='My posts'/>
     </div>
   );
 }

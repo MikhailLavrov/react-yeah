@@ -1,23 +1,24 @@
+import { Link } from 'react-router-dom';
 import c from './Navigation.module.css';
 
 function Navigation() {
   return (
     <nav className={c.navigation}>
       <ul>
-        <li>
-          <a href='#'>Profile</a>
+        <li className={c.item}>
+          <Link to='/profile' className='link'>Profile</Link>
         </li>
-        <li>
-          <a href='#'>Messages</a>
+        <li className={c.item}>
+          <Link to='/dialogs' className='link'>Messages</Link>
         </li>
-        <li>
-          <a href='#'>News</a>
+        <li className={c.item}>
+          <Link to='/news'>News</Link>
         </li>
-        <li>
-          <a href='#'>Music</a>
+        <li className={c.item}>
+          <Link to='/music'>Music</Link>
         </li>
-        <li>
-          <a href='#'>Settings</a>
+        <li className={c.item}>
+          <Link to='/settings'>Settings</Link>
         </li>
       </ul>
     </nav>

@@ -1,5 +1,30 @@
 .post {
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
   color: aliceblue;
   
   background-color: rgba(25, 58, 47, 0.5);
+  box-shadow: 0px 3px 20px -10px #000000;
+
+  font-weight: 500;
+  text-shadow: none;
+  border-radius: 10px;
+}
+
+.post img {
+  width: auto;
+  aspect-ratio: 1;
+  height: 50px;
+  background-color: rgb(215, 240, 250);
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.post__likecounter {
+  margin-left: auto;
+  align-self: flex-end;
 }
