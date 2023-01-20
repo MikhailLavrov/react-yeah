@@ -1,7 +1,6 @@
 .profileInfo {
   background-color: rgba(232, 235, 229, 0.433);
   margin-bottom: 10px;
-  /* box-shadow: 0px 6px 15px -10px #00000075; */
 }
 
 .profileInfo > img {
@@ -14,7 +13,9 @@
 }
 
 .profileInfo__ava img {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
   object-fit: cover;
+  aspect-ratio: 1;
 }
