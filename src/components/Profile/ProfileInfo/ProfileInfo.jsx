@@ -11,7 +11,11 @@ function ProfileInfo() {
         <div className={c.profileInfo__ava}>
           <img src={IMG_SRC_AVATAR} alt='#'></img>
         </div>
-        <div>Info / Description</div>
+        <div>
+          <h3>Name</h3>
+          <span>Age</span>
+          <p>Meow bio</p>
+        </div>
       </div>
     </div>
   );

@@ -1,3 +1,15 @@
 .dialogs__item {
   background-color: rgba(238, 250, 215, 0.5);
 }
+
+.dialogs__item img {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.dialogs__item a {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+}

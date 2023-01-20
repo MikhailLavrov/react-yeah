@@ -27,4 +27,9 @@
 .post__likecounter {
   margin-left: auto;
   align-self: flex-end;
+  cursor: pointer;
+}
+
+.post__likecounter:hover {
+  color: brown;
 }

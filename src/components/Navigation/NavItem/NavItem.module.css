@@ -1,0 +1,22 @@
+.item a {
+  padding: 15px;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  
+  color: rgb(40, 0, 77);
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+}
+
+.item a:hover,
+.item a.active {
+  background-color: aliceblue;
+}
+
+.item a.active {
+  box-shadow: 0px 6px 15px -10px #000000;
+}

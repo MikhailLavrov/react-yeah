@@ -1,6 +1,7 @@
 .dialogs {
   display: grid;
   grid-template-columns: 2fr 10fr;
+  column-gap: 40px;
 }
 
 .dialogs h2 {
@@ -38,8 +39,9 @@
 }
 
 
-/* .dialogs__list {
-} */
+.dialogs__list {
+  border-right: 1px solid rgba(0, 0, 0, 0.197);
+}
 
 .dialogs__item {
   background-color: rgba(238, 250, 215, 0.5);
