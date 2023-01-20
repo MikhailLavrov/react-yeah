@@ -1,4 +1,4 @@
-.myposts {
+.myposts__posts {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -6,4 +6,36 @@
   padding: 10px 0;
   color: rgb(0, 55, 55);
   font-weight: 600;
+  overflow: auto;
+  height: auto;
+}
+
+.myposts__addBlock {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 6px 15px -10px #00000075;
+}
+
+.myposts__addBlock textarea {
+  resize: none;
+  height: 100px;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: none;
+  background-color: rgba(245, 245, 220, 0.482);
+  outline: none;
+}
+
+.myposts__addBlock button {
+  padding: 10px;
+  border: none;
+  background-color: rgb(238, 245, 220);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+}
+
+.myposts__addBlock button:hover {
+  background-color: rgb(236, 248, 207);
 }

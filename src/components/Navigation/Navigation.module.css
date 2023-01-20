@@ -3,6 +3,7 @@
   grid-area: n;
 
   background-color: rgba(231, 193, 251, 0.5);
+  overflow: hidden;
 }
 
 .navigation ul {
@@ -34,18 +35,6 @@
   background-color: aliceblue;
 }
 
-.active,
-.isActive {
-  color: aqua;
-}
-
-.item a.active,
-.item a.isActive {
-  background-color: aliceblue;
-  color: rgb(0, 255, 51);
-}
-
-.link {
-  background-color: aqua;
-  font-weight: 700;
+.item a.active {
+  box-shadow: 0px 6px 15px -10px #000000;
 }
