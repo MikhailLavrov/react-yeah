@@ -5,8 +5,8 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 function Profile(props) {
   return (
     <div className={c.profile}>
-      <ProfileInfo />
-      <MyPosts posts={props.state.posts} />
+      <ProfileInfo authors={props.state.authors}/>
+      <MyPosts posts={props.state.posts} authors={props.state.authors} />
     </div>
   );
 }

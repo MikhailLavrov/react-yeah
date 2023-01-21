@@ -1,5 +1,4 @@
 .profileInfo {
-  background-color: rgba(232, 235, 229, 0.433);
   margin-bottom: 10px;
 }
 
@@ -10,6 +9,7 @@
 .profileInfo__description {
   display: flex;
   gap: 20px;
+  background-color: rgba(205, 209, 202, 0.433);
 }
 
 .profileInfo__ava img {

@@ -2,7 +2,7 @@ import c from './MyPosts.module.css';
 import Post from './Post/Post';
 
 function MyPosts(props) {
-  let postsElements = props.posts.map(post => <Post message={post.message} likeCounter={post.likeCounter} />)
+  let posts = props.posts.map(post => <Post message={post.message} likeCounter={post.likeCounter} avatar={props.authors[0]} />)
 
   return (
       <div className={c.myposts}>
@@ -11,7 +11,7 @@ function MyPosts(props) {
           <button type='button'>Add post</button>
         </div>
         <div className={c.myposts__posts}>
-          {postsElements}
+          {posts}
         </div>
       </div>
   );
