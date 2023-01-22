@@ -30,7 +30,7 @@ body {
   "n c";
 }
 
-.app__wrapper-content {
+.app__content {
   display: flex;
   flex-direction: column;
   gap: 10px;

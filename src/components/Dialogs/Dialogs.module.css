@@ -1,9 +1,3 @@
-.dialogs {
-  display: grid;
-  grid-template-columns: 3fr 10fr;
-  column-gap: 40px;
-}
-
 .dialogs__header {
   padding: 10px;
   margin: 0;
@@ -15,19 +9,91 @@
 
 .dialogs ul {
   margin: 0;
-  padding: 0;
-
+  
   list-style: none;
+}
+
+.dialogs__innerWrapper {
+  margin-bottom: 20px;
+
+  display: grid;
+  grid-template-columns: 3fr 10fr;
+  gap: 30px;
 }
 
 .dialogs__contactsList {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
+  padding: 0;
 }
 
 .dialogs__messagesList {
+  padding: 0 10px;
+  
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.dialogs__contactsList,
+.dialogs__messagesList {
+  max-height: 73vh;
+  
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.dialogs__contactsList::-webkit-scrollbar,
+.dialogs__messagesList::-webkit-scrollbar {
+  width: 3px;
+  background-color: rgba(127, 155, 255, 0.153);
+}
+
+.dialogs__contactsList::-webkit-scrollbar-thumb,
+.dialogs__messagesList::-webkit-scrollbar-thumb {
+  width: 3px;
+  background-color: rgba(97, 73, 182, 0.53);
+}
+
+.dialogs__addBlock {
+  position: relative;
+  margin-top: auto;
+}
+
+.dialogs__addBlock textarea {
+  padding: 20px;
+
+  width: 100%;
+  
+  background-color: rgba(240, 248, 255, 0.508);
+  outline: none;
+  resize: none;
+}
+
+.dialogs__addBlock button {
+  margin: 0;
+  padding: 0;
+  
+  width: 40px;
+  height: 40px;
+  
+  position: absolute;
+  right: calc(40px / 2);
+  top: calc(50% - 40px / 2);
+  
+  font-size: 20px;
+  
+  background-color: rgba(156, 207, 251, 0.25);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dialogs__addBlock button:hover {
+  background-color: rgba(156, 207, 251, 0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
