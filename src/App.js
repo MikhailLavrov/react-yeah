@@ -13,7 +13,7 @@ function App(props) {
     <BrowserRouter>
       <div className={c.app}>
         <Header />
-        <Navigation state={props.state.sidebar} profile={props.state.profilePage} />
+        <Navigation state={props.state.sidebar} profile={props.state.profilePage} dialogs={props.state.dialogsPage} />
         <div className='app__wrapper-content'>
           <Routes>
             <Route path="/*" element={ <Profile state={props.state.profilePage} /> } />

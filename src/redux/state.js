@@ -2,7 +2,7 @@ let state = {
   profilePage: {
     authors: [
       {
-        name: 'Kotty', 
+        name: 'Kotty Meowson', 
         age: 7, 
         bio: 'Meow bio', 
         avatarImg: 'https://klike.net/uploads/posts/2019-03/1551511801_1.jpg', 
@@ -26,8 +26,8 @@ let state = {
     ],
 
     messages: [
-      {id: 1, message: 'Hello'},
       {id: 2, message: 'How r u?'},
+      {id: 1, message: 'Hello'},
       {id: 3, message: 'Wow, really?'},
     ],
   },

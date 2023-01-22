@@ -1,15 +1,25 @@
-.dialogs__item {
+.dialogs__link {
+  padding: 10px;
+  
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  text-decoration: none;
+  color: #000;
+  
   background-color: rgba(238, 250, 215, 0.5);
+  
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px -10px #00000080;
+  transition: all 0.2s linear;
 }
 
-.dialogs__item img {
+.dialogs__link:hover {
+  background-color: rgba(142, 176, 78, 0.5);
+}
+
+.dialogs__link img {
   object-fit: cover;
   border-radius: 50%;
-}
-
-.dialogs__item a {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-
 }

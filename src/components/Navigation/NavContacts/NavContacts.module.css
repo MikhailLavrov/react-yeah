@@ -1,0 +1,26 @@
+.navigation__contactsHeader {
+  padding: 0 10px;
+  margin: 0;
+
+  font-weight: 500;
+  line-height: 1;
+  font-size: 18px;
+}
+
+.navigation__contactsList {
+  padding: 0;
+}
+
+.navigation__contactsList a {
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0%;
+}
+
+.navigation__contactsList a:hover {
+  background-color: aliceblue;
+}
+
+.navigation__contactsList img {
+  border-radius: 5px !important;
+}

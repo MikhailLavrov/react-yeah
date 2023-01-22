@@ -4,7 +4,7 @@
   column-gap: 40px;
 }
 
-.dialogs h2 {
+.dialogs__header {
   padding: 10px;
   margin: 0;
   margin-bottom: 20px;
@@ -15,47 +15,19 @@
 
 .dialogs ul {
   margin: 0;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  
+  padding: 0;
+
   list-style: none;
 }
 
-.dialogs a {
-  padding: 10px;
-  text-decoration: none;
-  color: inherit;
-  width: 100%;
-  display: inline-block;
-  border-radius: 10px;
-  box-shadow: 0px 6px 15px -10px #00000080;
-  max-width: 100%;
-  box-sizing: border-box;
-  transition: all 0.2s linear;
+.dialogs__contactsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.dialogs a:hover {
-  background-color: rgba(142, 176, 78, 0.5);
+.dialogs__messagesList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-
-
-.dialogs__list {
-  background-color: aliceblue;
-  height: 100%;
-}
-
-.dialogs__item {
-  background-color: rgba(238, 250, 215, 0.5);
-  cursor: pointer;
-}
-
-.dialogs__item.active,
-.dialogs__item:hover {
-  background-color: rgba(142, 176, 78, 0.5);
-  color: rgb(0, 59, 59);
-}
-
-/* .dialogs__messages {
-} */

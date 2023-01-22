@@ -1,5 +1,6 @@
 import c from './Navigation.module.css';
 import NavItem from './NavItem/NavItem';
+import NavContacts from './NavContacts/NavContacts';
 
 function Navigation(props) {
   const createNavPoints = props.state.navPoints.map(navPoint => (
@@ -17,11 +18,11 @@ function Navigation(props) {
 
   return (
     <nav className={c.navigation}>
-      <ul>
-        {getAuthorInfo}
-        
+      {getAuthorInfo}
+      <ul className={c.navigation__list}>
         {createNavPoints}
       </ul>
+      <NavContacts  dialogs={props.dialogs} />
     </nav>
   );
 }

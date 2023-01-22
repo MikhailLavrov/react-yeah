@@ -8,11 +8,11 @@ function Dialogs(props) {
 
   return (
     <div className={c.dialogs}>
-      <h2>Dialogs</h2>
-      <ul className={c.dialogs__list}>
+      <h2 className={c.dialogs__header}>Dialogs</h2>
+      <ul className={c.dialogs__contactsList}>
         {dialogsElements}
       </ul>
-      <ul className={c.dialogs__messages}>
+      <ul className={c.dialogs__messagesList}>
         {messagesElements}
       </ul>
     </div>
