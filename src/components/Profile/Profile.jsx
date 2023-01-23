@@ -5,8 +5,8 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 function Profile(props) {
   return (
     <div className={c.profile}>
-      <ProfileInfo authors={props.state.authors}/>
-      <MyPosts posts={props.state.posts} authors={props.state.authors} />
+      <ProfileInfo authors={props.profilePage.authors}/>
+      <MyPosts posts={props.profilePage.posts} authors={props.profilePage.authors} addPost={props.addPost} newPostText={props.profilePage.newPostText} updateNewPostText={props.updateNewPostText} />
     </div>
   );
 }

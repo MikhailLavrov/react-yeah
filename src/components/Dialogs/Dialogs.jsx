@@ -4,14 +4,17 @@ import Message from './Messages/Message/Message';
 import React from 'react';
 
 function Dialogs(props) {
-  let dialogsElements = props.state.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} avaPath={dialog.avaPath} />)
-  let messagesElements = props.state.messages.map(message => <Message message={message.message}/>)
+  let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} avaPath={dialog.avaPath} />)
+  let messagesElements = props.dialogsPage.messages.map(message => <Message message={message.message}/>)
 
   let newMessage = React.createRef();
 
   let addMessage = () => {
     let text = newMessage.current.value;
-    alert(text);
+    if (newMessage.current.value !== '') {
+      props.addMessage(text);
+    }
+    newMessage.current.value = '';
   }
 
   return (
@@ -26,7 +29,7 @@ function Dialogs(props) {
         </ul>
       </div>
       <div className={c.dialogs__addBlock}>
-        <textarea  ref={newMessage} name="post" cols="30" rows="3" placeholder='Write something here'></textarea>
+        <textarea  ref={newMessage} name="post" cols="30" rows="3" placeholder='Write something here' />
         <button type='button' onClick={addMessage}>🚀</button>
       </div>
     </div>

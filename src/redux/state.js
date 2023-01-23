@@ -1,3 +1,7 @@
+let reRender = () => {
+  console.log('State has changed');
+};
+
 let state = {
   profilePage: {
     authors: [
@@ -14,8 +18,9 @@ let state = {
       {id: 1, message: 'Hello Bob', likeCounter: 0},
       {id: 2, message: 'Hello Ashley?', likeCounter: 12},
       {id: 3, message: 'Hello Poop @', likeCounter: 2},
-      {id: 3, message: 'Hello Poop @', likeCounter: 2},
     ],
+
+    newPostText: '',
   },
   
   dialogsPage: {
@@ -41,6 +46,37 @@ let state = {
       {path: '/settings', name: 'Settings'},
     ]
   }
-}
+};
+
+export const addPost = () => {
+  let newPost = {
+    id: 5,
+    message: state.profilePage.newPostText,
+    likeCounter: 0,
+  };
+
+  state.profilePage.posts.unshift(newPost);
+  reRender();
+  state.profilePage.newPostText = '';
+};
+
+export const addMessage = (message) => {
+  let newMessage = {
+    id: 4, 
+    message: message,
+  }
+
+  state.dialogsPage.messages.push(newMessage);
+  reRender();
+};
+
+export const updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  reRender();
+};
+
+export const subscribe = (observer) => {
+  reRender = observer;
+};
 
 export default state;

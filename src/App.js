@@ -12,13 +12,16 @@ function App(props) {
   return (
     <div className={c.app}>
       <Header />
-      <Navigation state={props.state.sidebar} profile={props.state.profilePage} dialogs={props.state.dialogsPage} />
+      <Navigation sidebar={props.state.sidebar} profile={props.state.profilePage} dialogs={props.state.dialogsPage} />
       <div className={c.app__content}>
         <Routes>
           <Route path="/*" 
-                  element={ <Profile state={props.state.profilePage} /> } />
+                  element={ <Profile 
+                              profilePage={props.state.profilePage}     
+                              addPost={props.addPost}
+                              updateNewPostText={props.updateNewPostText} /> } />
           <Route path="/dialogs/*" 
-                  element={ <Dialogs state={props.state.dialogsPage} /> } />
+                  element={ <Dialogs dialogsPage={props.state.dialogsPage} addMessage={props.addMessage} /> } />
           <Route path="/music" 
                   element={<Music/>}/>
           <Route path="/news" 

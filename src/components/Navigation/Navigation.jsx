@@ -3,7 +3,7 @@ import NavItem from './NavItem/NavItem';
 import NavContacts from './NavContacts/NavContacts';
 
 function Navigation(props) {
-  const createNavPoints = props.state.navPoints.map(navPoint => (
+  const createNavPoints = props.sidebar.navPoints.map(navPoint => (
     <NavItem  path={navPoint.path} name={navPoint.name}/>
   ));
 
