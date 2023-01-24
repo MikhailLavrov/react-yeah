@@ -4,9 +4,7 @@ import { HashRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import './index.css';
-import { addPost, addMessage, updateNewPostText } from './redux/state';
-import state from './redux/state';
-import { subscribe } from './redux/state';
+import store from './redux/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -14,15 +12,15 @@ let reRenderEntireTree = () => {
   root.render(
     <React.StrictMode>
       <HashRouter>
-        <App state={state} addPost={addPost} addMessage={addMessage} updateNewPostText={updateNewPostText} />
+        <App state={store.getState()} dispatch={store.dispatch.bind(store)} />
       </HashRouter>
     </React.StrictMode>
   );
 }
 
-reRenderEntireTree(state);
+reRenderEntireTree(store.getState());
 
-subscribe(reRenderEntireTree);
+store.subscribe(reRenderEntireTree);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

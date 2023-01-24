@@ -15,19 +15,11 @@ function App(props) {
       <Navigation sidebar={props.state.sidebar} profile={props.state.profilePage} dialogs={props.state.dialogsPage} />
       <div className={c.app__content}>
         <Routes>
-          <Route path="/*" 
-                  element={ <Profile 
-                              profilePage={props.state.profilePage}     
-                              addPost={props.addPost}
-                              updateNewPostText={props.updateNewPostText} /> } />
-          <Route path="/dialogs/*" 
-                  element={ <Dialogs dialogsPage={props.state.dialogsPage} addMessage={props.addMessage} /> } />
-          <Route path="/music" 
-                  element={<Music/>}/>
-          <Route path="/news" 
-                  element={<News/>}/>
-          <Route path="/settings" 
-                  element={<Settings/>}/>
+          <Route path="/*" element={ <Profile profilePage={props.state.profilePage} dispatch={props.dispatch} /> } />
+          <Route path="/dialogs/*" element={ <Dialogs dialogsPage={props.state.dialogsPage} dispatch={props.dispatch} /> } />
+          <Route path="/music" element={<Music/>}/>
+          <Route path="/news" element={<News/>}/>
+          <Route path="/settings" element={<Settings/>}/>
         </Routes>
       </div>
     </div>

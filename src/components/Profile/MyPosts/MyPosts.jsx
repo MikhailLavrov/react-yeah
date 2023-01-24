@@ -9,20 +9,26 @@ function MyPosts(props) {
 
   let addPost = () => {
     if (textareaElement.current.value !== '') {
-      props.addPost();
+      props.dispatch({ type: 'ADD-POST' });
     }
   }
 
   let onPostChange = () => {
     let text = textareaElement.current.value;
-    props.updateNewPostText(text);
+    props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: text });
   }
 
   return (
       <div className={c.myposts}>
         <div className={c.myposts__addBlock}>
-          <textarea name="post" value={props.newPostText} ref={textareaElement} onChange={onPostChange} cols="30" rows="10" placeholder='Write something here' />
-          <button type='button' onClick={addPost}>Add post</button>
+          <textarea name="post" 
+                    value={ props.newPostText } 
+                    ref={ textareaElement } 
+                    onChange={ onPostChange } 
+                    cols="30" rows="10" 
+                    placeholder='Write something here' 
+                    />
+          <button type='button' onClick={ addPost }>Add post</button>
         </div>
         <div className={c.myposts__posts}>
           {posts}

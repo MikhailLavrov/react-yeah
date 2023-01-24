@@ -7,14 +7,18 @@ function Dialogs(props) {
   let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} avaPath={dialog.avaPath} />)
   let messagesElements = props.dialogsPage.messages.map(message => <Message message={message.message}/>)
 
-  let newMessage = React.createRef();
+  let textareaElement = React.createRef();
+
+  let onMessageChange = () => {
+    let text = textareaElement.current.value;
+    props.dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newMessage: text})
+  }
 
   let addMessage = () => {
-    let text = newMessage.current.value;
-    if (newMessage.current.value !== '') {
-      props.addMessage(text);
+    if (textareaElement.current.value !== '') {
+      props.dispatch({type: 'ADD-MESSAGE'});
     }
-    newMessage.current.value = '';
+    textareaElement.current.value = '';
   }
 
   return (
@@ -29,8 +33,13 @@ function Dialogs(props) {
         </ul>
       </div>
       <div className={c.dialogs__addBlock}>
-        <textarea  ref={newMessage} name="post" cols="30" rows="3" placeholder='Write something here' />
-        <button type='button' onClick={addMessage}>🚀</button>
+        <textarea  ref={textareaElement} 
+                   value={props.newMessageText}
+                   onChange={ onMessageChange }
+                   name="post" 
+                   cols="30" rows="3" 
+                   placeholder='Write something here' />
+        <button type='button' onClick={ addMessage }>🚀</button>
       </div>
     </div>
   )
