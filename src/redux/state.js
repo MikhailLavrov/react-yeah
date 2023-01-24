@@ -1,3 +1,8 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+
 let store = {
 
   _state: {
@@ -63,7 +68,7 @@ let store = {
   dispatch(action) {
     switch (action.type) {
 
-      case 'ADD-POST':
+      case ADD_POST:
         let newPost = {
           id: 0,
           message: this._state.profilePage.newPostText,
@@ -75,12 +80,12 @@ let store = {
         this._state.profilePage.newPostText = '';
         break;
 
-      case 'UPDATE-NEW-POST-TEXT':
+      case UPDATE_POST_TEXT:
         this._state.profilePage.newPostText = action.newText;
         this._callSubscriber(this._state);
         break;
 
-      case 'ADD-MESSAGE':
+      case ADD_MESSAGE:
         let newMessage = {
           id: 0, 
           message: this._state.dialogsPage.newMessageText,
@@ -91,7 +96,7 @@ let store = {
         this._state.dialogsPage.newMessageText = '';
         break;
 
-      case 'UPDATE-NEW-MESSAGE-TEXT':
+      case UPDATE_MESSAGE_TEXT:
         this._state.dialogsPage.newMessageText = action.newMessage;
         this._callSubscriber(this._state);
         break;
@@ -99,39 +104,18 @@ let store = {
       default:
         break;
     }
-    // if (action.type === 'ADD-POST') {
-    //   let newPost = {
-    //     id: 0,
-    //     message: this._state.profilePage.newPostText,
-    //     likeCounter: 0,
-    //   };
-    
-    //   this._state.profilePage.posts.unshift(newPost);
-    //   this._callSubscriber(this._state);
-    //   this._state.profilePage.newPostText = '';
-    // } 
-
-    // else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-    //   this._state.profilePage.newPostText = action.newText;
-    //   this._callSubscriber(this._state);
-    // } 
-    
-    // else if (action.type === 'ADD-MESSAGE') {
-    //   let newMessage = {
-    //     id: 0, 
-    //     message: this._state.dialogsPage.newMessageText,
-    //   }
-    
-    //   this._state.dialogsPage.messages.push(newMessage);
-    //   this._callSubscriber(this._state);
-    //   this._state.dialogsPage.newMessageText = '';
-    // }
-
-    // else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
-    //   this._state.dialogsPage.newMessageText = action.newMessage;
-    //   this._callSubscriber(this._state);
-    // }
   },
 }
+
+// обёрнуто в круг скобки чтобы обозначить возвращение объекта
+export const addPostCreator = () => ({ type: ADD_POST })
+
+export const updatePostTextCreator = (text) => 
+({ type: UPDATE_POST_TEXT, newText: text })
+
+export const addMessageCreator = () => ({ type: ADD_MESSAGE })
+
+export const updateMessageTextCreator = (text) => 
+({ type: UPDATE_MESSAGE_TEXT, newMessage: text })
 
 export default store;

@@ -1,6 +1,7 @@
 import c from './MyPosts.module.css';
 import Post from './Post/Post';
 import React from 'react';
+import { addPostCreator, updatePostTextCreator } from '../../../redux/state';
 
 function MyPosts(props) {
   let posts = props.posts.map(post => <Post message={post.message} likeCounter={post.likeCounter} avatar={props.authors[0]} />)
@@ -9,13 +10,13 @@ function MyPosts(props) {
 
   let addPost = () => {
     if (textareaElement.current.value !== '') {
-      props.dispatch({ type: 'ADD-POST' });
+      props.dispatch(addPostCreator());
     }
   }
 
   let onPostChange = () => {
     let text = textareaElement.current.value;
-    props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: text });
+    props.dispatch(updatePostTextCreator(text));
   }
 
   return (

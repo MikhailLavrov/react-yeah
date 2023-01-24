@@ -11,6 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 let reRenderEntireTree = () => {
   root.render(
     <React.StrictMode>
+      {/* HashRouter вместо BrowserRouter использован для gh-pages фикса перезагрузки */}
       <HashRouter>
         <App state={store.getState()} dispatch={store.dispatch.bind(store)} />
       </HashRouter>
