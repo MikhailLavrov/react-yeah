@@ -1,7 +1,7 @@
 import c from './MyPosts.module.css';
 import Post from './Post/Post';
 import React from 'react';
-import { addPostCreator, updatePostTextCreator } from '../../../redux/profileReducer';
+import { addPostActionCreator, updatePostActionCreator } from '../../../redux/profileReducer';
 
 function MyPosts(props) {
   let posts = props.posts.map(post => <Post message={post.message} likeCounter={post.likeCounter} avatar={props.authors[0]} />)
@@ -10,13 +10,15 @@ function MyPosts(props) {
 
   let addPost = () => {
     if (textareaElement.current.value !== '') {
-      props.dispatch(addPostCreator());
+      // props.addPost();
+      props.dispatch(addPostActionCreator());
     }
   }
 
   let onPostChange = () => {
     let text = textareaElement.current.value;
-    props.dispatch(updatePostTextCreator(text));
+    // props.updatePostActionCreator(text);
+    props.dispatch(updatePostActionCreator(text));
   }
 
   return (

@@ -2,7 +2,7 @@ import c from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Messages/Message/Message';
 import React from 'react';
-import { addMessageCreator, updateMessageTextCreator } from '../../redux/dialogsReducer';
+import { addMessageActionCreator, updateMessageActionCreator } from '../../redux/dialogsReducer';
 
 function Dialogs(props) {
   let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} avaPath={dialog.avaPath} />)
@@ -12,12 +12,12 @@ function Dialogs(props) {
 
   let onMessageChange = () => {
     let text = textareaElement.current.value;
-    props.dispatch(updateMessageTextCreator(text))
+    props.dispatch(updateMessageActionCreator(text))
   }
 
   let addMessage = () => {
     if (textareaElement.current.value !== '') {
-      props.dispatch(addMessageCreator());
+      props.dispatch(addMessageActionCreator());
     }
     textareaElement.current.value = '';
   }
