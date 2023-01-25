@@ -2,7 +2,7 @@ import c from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Messages/Message/Message';
 import React from 'react';
-import { addMessageCreator, updateMessageTextCreator } from '../../redux/state';
+import { addMessageCreator, updateMessageTextCreator } from '../../redux/dialogsReducer';
 
 function Dialogs(props) {
   let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} avaPath={dialog.avaPath} />)
