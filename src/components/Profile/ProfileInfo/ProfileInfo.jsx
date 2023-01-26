@@ -2,7 +2,9 @@ import { Fragment } from 'react';
 import c from './ProfileInfo.module.css';
 
 function ProfileInfo(props) {
-  let newProfile = props.authors.map(author => {
+  let state = props.store.getState();
+
+  let newProfile = state.profilePage.authors.map(author => {
     return (
       <Fragment>
         <img src={author.headerImg} alt='#'></img>
