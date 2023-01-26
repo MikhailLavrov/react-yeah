@@ -1,15 +1,12 @@
 import c from './Profile.module.css';
-import MyPosts from './MyPosts/MyPosts';
+import MyPostsContainer from './MyPostsContainer/MyPostsContainer';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 function Profile(props) {
   return (
     <div className={c.profile}>
-      <ProfileInfo authors={props.profilePage.authors}/>
-      <MyPosts dispatch={props.dispatch} 
-               posts={props.profilePage.posts} 
-               authors={props.profilePage.authors} 
-               newPostText={props.profilePage.newPostText} />
+      <ProfileInfo authors={props.store.getState().profilePage.authors}/>
+      <MyPostsContainer store={props.store} />
     </div>
   );
 }
