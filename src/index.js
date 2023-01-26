@@ -5,16 +5,19 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 import './index.css';
 import store from './redux/reduxStore';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let reRenderEntireTree = () => {
   root.render(
     <React.StrictMode>
+      <Provider store={store}>
       {/* HashRouter вместо BrowserRouter использован для gh-pages фикса перезагрузки */}
-      <HashRouter>
-        <App state={store.getState()} store={store} dispatch={store.dispatch.bind(store)} />
-      </HashRouter>
+        <HashRouter>
+          <App state={store.getState()} store={store} dispatch={store.dispatch.bind(store)} />
+        </HashRouter>
+      </Provider>
     </React.StrictMode>
   );
 };

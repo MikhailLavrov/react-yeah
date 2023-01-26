@@ -5,8 +5,8 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 function Profile(props) {
   return (
     <div className={c.profile}>
-      <ProfileInfo store={props.store} />
-      <MyPostsContainer store={props.store} />
+      <ProfileInfo state={props.state} />
+      <MyPostsContainer />
     </div>
   );
 }

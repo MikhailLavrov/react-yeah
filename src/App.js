@@ -15,8 +15,8 @@ function App(props) {
       <Navigation sidebar={props.state.sidebar} profile={props.state.profilePage} dialogs={props.state.dialogsPage} />
       <div className={c.app__content}>
         <Routes>
-          <Route path="/*" element={ <Profile store={props.store} /> } />
-          <Route path="/dialogs/*" element={ <DialogsContainer store={props.store} /> } />
+          <Route path="/*" element={ <Profile state={props.store.getState()} /> } />
+          <Route path="/dialogs/*" element={ <DialogsContainer /> } />
           <Route path="/music" element={<Music/>}/>
           <Route path="/news" element={<News/>}/>
           <Route path="/settings" element={<Settings/>}/>
