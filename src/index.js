@@ -9,21 +9,16 @@ import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let reRenderEntireTree = () => {
-  root.render(
-    <React.StrictMode>
-      <Provider store={store}>
-      {/* HashRouter вместо BrowserRouter использован для gh-pages фикса перезагрузки */}
-        <HashRouter>
-          <App state={store.getState()} store={store} dispatch={store.dispatch.bind(store)} />
-        </HashRouter>
-      </Provider>
-    </React.StrictMode>
-  );
-};
-
-reRenderEntireTree(store.getState());
-store.subscribe(() => reRenderEntireTree(store.getState()));
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+    {/* HashRouter вместо BrowserRouter использован для gh-pages фикса перезагрузки */}
+      <HashRouter>
+        <App state={store.getState()} />
+      </HashRouter>
+    </Provider>
+  </React.StrictMode>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

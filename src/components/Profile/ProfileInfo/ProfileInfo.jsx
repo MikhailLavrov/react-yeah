@@ -4,13 +4,13 @@ import c from './ProfileInfo.module.css';
 function ProfileInfo(props) {
   let newProfile = props.state.profilePage.authors.map(author => {
     return (
-      <Fragment>
+      <Fragment key={author.id} >
         <img src={author.headerImg} alt='#'></img>
-        <div className={c.profileInfo__description}>
+        <div className={c.profileInfo__descriptionWrapper}>
           <div className={c.profileInfo__ava}>
             <img src={author.avatarImg} alt='#'></img>
           </div>
-          <div>
+          <div className={c.profileInfo__description}>
             <h3>{author.name}</h3>
             <span>Age: {author.age}</span>
             <p>{author.bio}</p>

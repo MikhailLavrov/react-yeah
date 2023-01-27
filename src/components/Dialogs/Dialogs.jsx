@@ -4,8 +4,8 @@ import Message from './Messages/Message/Message';
 import React from 'react';
 
 function Dialogs(props) {
-  let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} avaPath={dialog.avaPath} />)
-  let messagesElements = props.dialogsPage.messages.map(message => <Message message={message.message}/>)
+  let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem name={dialog.name} avaPath={dialog.avaPath} key={dialog.id} />)
+  let messagesElements = props.dialogsPage.messages.map(message => <Message message={message.message} key={message.id}/>)
 
   let textareaElement = React.createRef();
 

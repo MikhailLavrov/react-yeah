@@ -6,7 +6,7 @@
 
   grid-area: h;
 
-  background-color: rgba(255, 228, 196, 0.5);
+  background: linear-gradient(90deg, rgba(112,79,143,0.8) 0%, rgba(169,176,0,0.5) 100%);
 }
 
 .header img {
@@ -29,5 +29,5 @@
 .header span {
   font-weight: 500;
   font-size: 18px;
-  color: rgba(2, 206, 233, 0.885);
+  color: rgb(84, 232, 251);
 }

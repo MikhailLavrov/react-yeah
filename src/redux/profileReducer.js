@@ -4,18 +4,20 @@ const UPDATE_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 let initialState = {
   authors: [
     {
-      name: 'Kotty Meowson', 
-      age: 7, 
-      bio: 'Meow bio', 
-      avatarImg: 'https://klike.net/uploads/posts/2019-03/1551511801_1.jpg', 
-      headerImg: 'https://images.ctfassets.net/hrltx12pl8hq/7yQR5uJhwEkRfjwMFJ7bUK/dc52a0913e8ff8b5c276177890eb0129/offset_comp_772626-opt.jpg?fit=fill&w=800&h=300'
+      id: '1', 
+      name: 'Joseph Cooper', 
+      age: 35, 
+      bio: 'We have always defined ourselves by the ability to overcome the impossible. And we count these moments. These moments when we dare to aim higher, to break barriers, to reach for the stars, to make the unknown known. We count these moments as our proudest achievements.', 
+      avatarImg: 'https://i.ytimg.com/vi/6z1q8SpsriY/maxresdefault.jpg',
+      headerImg: 'https://p4.wallpaperbetter.com/wallpaper/42/988/852/interstellar-movie-endurance-hd-wallpaper-preview.jpg',
     },
   ],
 
   posts: [
-    {id: 1, message: 'Hello Bob', likeCounter: 0},
-    {id: 2, message: 'Hello Ashley?', likeCounter: 12},
-    {id: 3, message: 'Hello Poop @', likeCounter: 2},
+    {id: 1, message: 'Hello humans!', likeCounter: 0},
+    {id: 2, message: 'Are u here?', likeCounter: 12},
+    {id: 3, message: 'Does anybody hear me?', likeCounter: 2},
+    {id: 4, message: 'Damn... 🥲', likeCounter: 2},
   ],
 
   newPostText: '',
@@ -23,19 +25,19 @@ let initialState = {
 
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_POST:
-      let newPost = {
-        id: 0,
-        message: state.newPostText,
-        likeCounter: 0,
+    
+    case ADD_POST: 
+      return {
+        ...state,
+        posts: [{ id: 0, message: state.newPostText, likeCounter: 0 }, ...state.posts],
+        newPostText: '',
       }
-      state.posts.unshift(newPost);
-      state.newPostText = '';
-      return state;
 
-    case UPDATE_POST_TEXT:
-      state.newPostText = action.newText;
-      return state;
+    case UPDATE_POST_TEXT: 
+      return {
+        ...state,
+        newPostText: action.newText,
+      }
 
     default: return state;
   }

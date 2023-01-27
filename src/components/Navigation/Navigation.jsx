@@ -1,24 +1,16 @@
 import c from './Navigation.module.css';
 import NavItem from './NavItem/NavItem';
 import NavContacts from './NavContacts/NavContacts';
+import AuthorInfo from './AuthorInfo/AuthorInfo';
 
 function Navigation(props) {
   const createNavPoints = props.sidebar.navPoints.map(navPoint => (
-    <NavItem  path={navPoint.path} name={navPoint.name}/>
+    <NavItem  path={navPoint.path} name={navPoint.name}  key={navPoint.key} />
   ));
-
-  const getAuthorInfo = props.profile.authors.map(author => {
-    return (
-      <div className={c.navigation__authorInfo}>
-        <img width={50} height={50} src={author.avatarImg} alt="ava" />
-        <span>{author.name}</span>
-      </div>
-    );
-  });
 
   return (
     <nav className={c.navigation}>
-      {getAuthorInfo}
+      <AuthorInfo authors={props.profile.authors} />
       <ul className={c.navigation__list}>
         {createNavPoints}
       </ul>

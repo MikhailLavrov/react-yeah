@@ -1,0 +1,19 @@
+.navigation__authorInfo {
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.navigation__authorInfo img {
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 6px 0 aliceblue;
+}
+
+.navigation__authorInfo span {
+  font-weight: 500;
+  color: aliceblue;
+}

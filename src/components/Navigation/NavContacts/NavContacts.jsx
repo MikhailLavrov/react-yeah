@@ -2,7 +2,7 @@ import c from './NavContacts.module.css';
 import DialogItem from '../../Dialogs/DialogItem/DialogItem';
 
 function NavContacts(props) {
-  let dialogsElements = props.dialogs.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} avaPath={dialog.avaPath} />)
+  let dialogsElements = props.dialogs.dialogs.map(dialog => <DialogItem name={dialog.name} key={dialog.id} id={dialog.id} avaPath={dialog.avaPath} />)
 
   return (
     <div className={c.navigation__contacts}>
