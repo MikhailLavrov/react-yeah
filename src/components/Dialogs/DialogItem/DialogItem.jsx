@@ -7,7 +7,10 @@ function DialogItem(props) {
     <li className={c.dialogs__item}>
       <NavLink to={path} className={c.dialogs__link}>
         <img width={50} height={50} src={props.avaPath} alt="ava" />
-        <p>{props.name}</p>
+        <p>
+          <span>{props.name}</span>&nbsp;
+          <span>{props.surname}</span>
+        </p>
       </NavLink>
     </li>
   )

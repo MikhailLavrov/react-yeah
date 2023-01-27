@@ -14,7 +14,7 @@ function Navigation(props) {
       <ul className={c.navigation__list}>
         {createNavPoints}
       </ul>
-      <NavContacts  dialogs={props.dialogs} />
+      <NavContacts dialogs={props.dialogs} />
     </nav>
   );
 }

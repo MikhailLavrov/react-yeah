@@ -5,7 +5,9 @@ function ProfileInfo(props) {
   let newProfile = props.state.profilePage.authors.map(author => {
     return (
       <Fragment key={author.id} >
-        <img src={author.headerImg} alt='#'></img>
+        <div className={c.profileInfo__header}>
+          <img src={author.headerImg} alt='#'></img>
+        </div>
         <div className={c.profileInfo__descriptionWrapper}>
           <div className={c.profileInfo__ava}>
             <img src={author.avatarImg} alt='#'></img>

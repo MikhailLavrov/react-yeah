@@ -2,7 +2,7 @@
   height: 100%;
   grid-area: n;
 
-  background: linear-gradient(180deg, rgba(112,79,143,0.8) 0%, rgba(169,176,0,0.5) 100%);
+  background: linear-gradient(180deg, rgba(25, 58, 47, 0.7) 0%, rgba(248, 248, 248, 0.5) 100%);
   /* background-color: rgba(231, 193, 251, 0.467); */
   overflow: hidden;
 }
