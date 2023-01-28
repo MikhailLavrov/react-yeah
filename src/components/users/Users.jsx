@@ -46,33 +46,35 @@ let Users = (props) => {
     )
   }
 
-  return <ul className={c.users}>
+  return <div className={c.users}>
+    <ul className={c.users__list}>
 
-    {
-    props.users.map(user => 
-    <li className={c.user} key={user.id}>
-      <div className={c.user__avatar}>
-        <img src={user.avatarImg} width={100} alt="avatar"  />
-      </div>
-      <div className={c.user__followButton}>
-        {!user.followed 
-          ? <button onClick={() => { props.follow(user.id) }}>Follow</button> 
-          : <button onClick={() => { props.unfollow(user.id) }}>Unfollow</button>
-        }
-      </div>
-      <p className={c.user__nameWrapper}>
-        <span>{user.name}</span>&nbsp;
-        <span>{user.surname}</span>
-      </p>
-      <div className={c.user__locationWrapper}>
-        <p>{user.location.country}</p>
-        <p>{user.location.city}</p>
-      </div>
-      <p>{user.status}</p>
-    </li>)
-    }
+      {
+      props.users.map(user => 
+      <li className={c.users__item} key={user.id}>
+        <div className={c.users__avatar}>
+          <img src={user.avatarImg} width={100} alt="avatar"  />
+        </div>
+        <div className={c.users__followButtonWrapper}>
+          {!user.followed 
+            ? <button onClick={() => { props.follow(user.id) }}>Follow</button> 
+            : <button onClick={() => { props.unfollow(user.id) }}>Unfollow</button>
+          }
+        </div>
+        <p className={c.users__nameWrapper}>
+          <span>{user.name}</span>&nbsp;
+          <span>{user.surname}</span>
+        </p>
+        <div className={c.users__locationWrapper}>
+          <p>{user.location.country}</p>
+          <p>{user.location.city}</p>
+        </div>
+        <p className={c.users__status}>Status: <br/> <span>"{user.status}"</span></p>
+      </li>)
+      }
 
-  </ul>
+    </ul>
+  </div>
 };
 
 export default Users;
