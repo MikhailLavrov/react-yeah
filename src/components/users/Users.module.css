@@ -1,24 +1,38 @@
-/* .users {} */
+.users h2 {
+  margin: 0;
+  padding: 20px;
+
+  font-size: 20px;
+  line-height: 1;
+}
+
+.users p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
 
 .users__list {
   margin: 0;
   padding: 0;
+  padding-bottom: 20px;
 
-  list-style: none;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  
+  list-style: none;
 }
 
 .users__item {
-  background-color: rgba(59, 120, 122, 0.307);
-
   padding: 20px;
+  
   display: grid;
-  grid-template-columns: 2fr 7fr 3fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-
+  
   border-radius: 10px;
+  background-color: rgba(59, 120, 122, 0.307);
 }
 
 .users__avatar {
@@ -31,6 +45,7 @@
 .users__avatar img {
   width: 100%;
   height: 100%;
+  
   object-fit: cover;
   border-radius: 10px;
 }
@@ -38,19 +53,23 @@
 .users__followButtonWrapper {
   grid-column: -1/-2;
   grid-row: 2/3;
-
+  
   display: flex;
   align-items: flex-end;
 }
 
 .users__followButtonWrapper button {
-  width: 100%;
   padding: 10px;
+  
+  width: 100%;
+  
+  color: aliceblue;
+  
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  color: aliceblue;
   background-color: rgba(25, 58, 47, 0.6);
+  
   transition: all 0.2s linear;
 }
 
@@ -59,10 +78,10 @@
 }
 
 .users__nameWrapper {
+  margin: 0;
+  
   grid-column: 2/3;
   grid-row: 1/2;
-
-  margin: 0;
 
   font-size: 24px;
 }
@@ -70,6 +89,7 @@
 .users__locationWrapper {
   grid-column: -1/-2;
   grid-row: 1/2;
+
   font-size: 24px;
 }
 
@@ -78,10 +98,11 @@
 }
 
 .users__status {
+  margin: 0;
+
   grid-column: 2/3;
   grid-row: 2/3;
 
-  margin: 0;
   line-height: 1;
 }
 
