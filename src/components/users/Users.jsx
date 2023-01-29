@@ -6,16 +6,42 @@ const DEFAULT_AVATAR = 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Defa
 
 class Users extends React.Component {
   componentDidMount() {
-    axios.get('https://social-network.samuraijs.com/api/1.0/users')
-         .then(response => {
-           this.props.setUsers(response.data.items)
-         });
+    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+         .then(response => { 
+          this.props.setUsers(response.data.items)
+          this.props.setTotalUsersCount(response.data.totalCount)
+        })
+  }
+
+  onPageChange = (pageNumber) => {
+    this.props.setCurrentPage(pageNumber)
+    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
+         .then(response => { this.props.setUsers(response.data.items) })
   }
   
   render() {
+
+    let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+    let pages = [];
+
+    // * Ограничил вывод кол-ва страниц пока
+    for (let i = 1; i <= pagesCount && i <= 50; i++) {
+      pages.push(i);
+    }
+
     return (
     <div className={c.users}>
       <h2>Users you may know</h2>
+      <div>
+
+        {
+        pages.map(page => { 
+          return <span className={ this.props.currentPage === page && c.users__selectedPage }
+                       onClick={ () => {this.onPageChange(page)} }>{page}</span>
+        })
+        }
+
+      </div>
       <ul className={c.users__list}>
 
         {

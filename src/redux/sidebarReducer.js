@@ -5,7 +5,7 @@ let initialState = {
     {id: '3', path: '/news', name: 'News'},
     {id: '4', path: '/music', name: 'Music'},
     {id: '5', path: '/settings', name: 'Settings'},
-    {id: '6', path: '/userscontainer', name: 'Users'},
+    {id: '6', path: '/usersContainer', name: 'Users'},
   ]
 };
 

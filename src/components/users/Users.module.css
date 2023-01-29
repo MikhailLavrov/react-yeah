@@ -6,6 +6,11 @@
   line-height: 1;
 }
 
+.users__selectedPage {
+  font-weight: 600;
+  color: rgb(92, 218, 110);
+}
+
 .users p {
   text-overflow: ellipsis;
   overflow: hidden;

@@ -1,46 +1,14 @@
 let FOLLOW = 'FOLLOW';
 let UNFOLLOW = 'UNFOLLOW';
 let SET_USERS = 'SET-USERS';
+let SET_CURRENT_PAGE = 'SET-CURRENT-PAGE';
+let SET_TOTAL_USERS_COUNT = 'SET-TOTAL-COUNT';
 
 let initialState = {
-  users: [
-    // {
-    //   id: '1',
-    //   followed: false,
-    //   name: 'Kelly', 
-    //   surname: 'C.',
-    //   status: 'Fine',
-    //   location: {
-    //     country: 'UK', 
-    //     city: 'Manchester',  
-    //   },
-    //   avatarImg: 'https://kellypreston.com/wp-content/uploads/2018/04/KP-Home-1-1-1040x800.jpg',
-    // },
-    // {
-    //   id: '2', 
-    //   followed: true,
-    //   name: 'Antonio', 
-    //   surname: 'B.', 
-    //   status: 'Hmm',
-    //   location: {
-    //     country: 'Canada', 
-    //     city: 'Montreal',  
-    //   },
-    //   avatarImg: 'https://www.imperial.ac.uk/ImageCropToolT4/imageTool/uploaded-images/marco-di-antonio_1656067608330_x2.jpg?r=7241',
-    // },
-    // {
-    //   id: '3', 
-    //   followed: false,
-    //   name: 'Makoto', 
-    //   surname: 'J.', 
-    //   status: 'I am ok',
-    //   location: {
-    //     country: 'Japan', 
-    //     city: 'Tokio',  
-    //   },
-    //   avatarImg: 'https://womenandtravel.net/wp-content/uploads/2021/06/Minami-Hamabe.jpg',
-    // },
-  ],
+  users: [],
+  pageSize: 10,
+  totalUsersCount: 0,
+  currentPage: 1,
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -69,6 +37,12 @@ const usersReducer = (state = initialState, action) => {
 
     case SET_USERS:
       return { ...state, users: action.users };
+
+    case SET_CURRENT_PAGE:
+      return { ...state, currentPage: action.currentPage };
+
+    case SET_TOTAL_USERS_COUNT:
+      return { ...state, totalUsersCount: action.count };
     
     default: return state;
   }
@@ -77,5 +51,7 @@ const usersReducer = (state = initialState, action) => {
 export const followAC = (userId) => ({ type: FOLLOW, userId});
 export const unfollowAC = (userId) => ({ type: UNFOLLOW, userId });
 export const setUsersAC = (users) => ({ type: SET_USERS, users });
+export const setCurrentPageAC = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
+export const setTotalUsersCountAC = (count) => ({ type: SET_TOTAL_USERS_COUNT, count });
 
 export default usersReducer;
