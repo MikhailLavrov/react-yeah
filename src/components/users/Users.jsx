@@ -1,4 +1,6 @@
 import c from './Users.module.css';
+import Preloader from '../common/Preloader/Preloader';
+
 const DEFAULT_AVATAR = 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg';
 
 let Users = (props) => {
@@ -26,7 +28,9 @@ let Users = (props) => {
       </div>
       <ul className={c.users__list}>
 
-        {
+        { 
+        props.isFetching ? <Preloader /> :
+
         props.users.map(user => 
         <li className={c.users__item} key={user.id}>
           <div className={c.users__avatar}>
