@@ -26,6 +26,7 @@
 .profileInfo__descriptionWrapper {
   display: grid;
   grid-template-columns: 2fr 10fr;
+  
   background-color: rgba(205, 209, 202, 0.433);
 }
 
@@ -51,6 +52,7 @@
   width: 100%;
   max-width: 200px;
   height: 100%;
+  
   object-fit: cover;
   aspect-ratio: 1;
 }

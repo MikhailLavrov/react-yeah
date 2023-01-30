@@ -10,22 +10,24 @@
 }
 
 .navigation__contactsList {
-  padding: 0;
+  padding: 10px;
+  
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
   gap: 5px;
-  padding: 10px;
 }
 
 .navigation__contactsList a {
+  padding: 5px;
+  
+  display: block;
+  
+  text-align: center;
+ 
   background-color: transparent;
   box-shadow: none;
   border-radius: 0%;
-  display: block;
-  padding: 0;
-  text-align: center;
-  padding: 5px;
 }
 
 .navigation__contactsList a:hover {
@@ -38,8 +40,10 @@
 
 .navigation__contactsList img {
   margin: 0 auto;
-  width: 70%;
-  aspect-ratio: 1/1;
-  height: auto;
   margin-bottom: 10px;
+ 
+  width: 70%;
+  height: auto;
+ 
+  aspect-ratio: 1/1;
 }

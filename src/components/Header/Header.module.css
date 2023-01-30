@@ -7,11 +7,11 @@
   grid-area: h;
 
   background: linear-gradient(90deg, rgba(25, 58, 47, 0.7) 0%, rgba(255, 255, 255, 0.2) 100%);
-  /* background: linear-gradient(90deg, rgba(112,79,143,0.8) 0%, rgba(169,176,0,0.5) 100%); */
 }
 
 .header img {
   margin-right: 10px;
+  
   height: 100%;
   
   pointer-events: none;

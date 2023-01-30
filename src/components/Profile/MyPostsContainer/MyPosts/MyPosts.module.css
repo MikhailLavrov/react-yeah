@@ -1,39 +1,46 @@
 .myposts__posts {
+  padding: 10px 0;
+  
+  height: auto;
+  
   display: flex;
   flex-direction: column;
   gap: 10px;
-  text-align: center;
-  padding: 10px 0;
-  color: rgb(0, 55, 55);
+  
   font-weight: 600;
+  color: rgb(0, 55, 55);
+  text-align: center;
   overflow: auto;
-  height: auto;
 }
 
 .myposts__addBlock {
   display: flex;
   flex-direction: column;
+  
   box-shadow: 0px 6px 15px -10px #00000075;
 }
 
 .myposts__addBlock textarea {
-  resize: none;
-  height: 100px;
   padding: 20px;
+  
+  height: 100px;
+  
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border: none;
   background-color: rgba(245, 245, 220, 0.482);
   outline: none;
+  resize: none;
 }
 
 .myposts__addBlock button {
   padding: 10px;
+  
   border: none;
-  background-color: rgb(238, 245, 220);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   cursor: pointer;
+  background-color: rgb(238, 245, 220);
 }
 
 .myposts__addBlock button:hover {

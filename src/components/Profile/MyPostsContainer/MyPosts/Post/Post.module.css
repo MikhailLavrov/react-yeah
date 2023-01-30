@@ -16,9 +16,11 @@
 }
 
 .post img {
-  width: auto;
-  aspect-ratio: 1;
   height: 50px;
+  
+  width: auto;
+  
+  aspect-ratio: 1;
   background-color: rgb(215, 240, 250);
   border-radius: 10px;
   object-fit: cover;
@@ -26,6 +28,7 @@
 
 .post__likecounter {
   margin-left: auto;
+  
   align-self: flex-end;
   cursor: pointer;
 }

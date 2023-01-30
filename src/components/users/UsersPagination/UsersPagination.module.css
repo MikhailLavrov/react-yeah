@@ -1,19 +1,23 @@
 .users__pagination {
+  margin-bottom: 10px;
+  
   display: flex;
   gap: 5px;
-  margin-bottom: 10px;
 }
 
 .users__pagination span {
-  background-color: rgba(25, 58, 47, 0.6);
   padding: 10px;
+  
   width: 40px;
   height: 40px;
-  text-align: center;
-  border-radius: 5px;
-  cursor: pointer;
+  
   color: aliceblue;
+  text-align: center;
+  
+  background-color: rgba(25, 58, 47, 0.6);
+  border-radius: 5px;
   transition: all 0.2s ease-in;
+  cursor: pointer;
 }
 
 .users__pagination span:hover {

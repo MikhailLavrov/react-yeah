@@ -3,7 +3,6 @@
   grid-area: n;
 
   background: linear-gradient(180deg, rgba(25, 58, 47, 0.7) 0%, rgba(248, 248, 248, 0.5) 100%);
-  /* background-color: rgba(231, 193, 251, 0.467); */
   overflow: hidden;
 }
 
@@ -15,5 +14,6 @@
   padding: 0;
   margin: 0;
   margin-bottom: 20px;
+  
   border-bottom: 1px solid rgba(0, 0, 0, 0.16);
 }
