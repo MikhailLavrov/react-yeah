@@ -4,6 +4,7 @@ let SET_USERS = 'SET-USERS';
 let SET_CURRENT_PAGE = 'SET-CURRENT-PAGE';
 let SET_TOTAL_USERS_COUNT = 'SET-TOTAL-COUNT';
 let TOGGLE_IS_FETCHING = 'TOGGLE-IS-FETCHING';
+let SET_USER_PROFILE = 'SET-USER-PROFILE';
 
 let initialState = {
   users: [],
@@ -11,12 +12,12 @@ let initialState = {
   totalUsersCount: 0,
   currentPage: 1,
   isFetching: false,
+  userProfile: null,
 };
 
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case FOLLOW:
-      debugger
       return {
         state: {...state},
         users: state.users.map(user => {
@@ -38,17 +39,15 @@ const usersReducer = (state = initialState, action) => {
         }),
       };
 
-    case SET_USERS:
-      return { ...state, users: action.users };
+    case SET_USERS: return { ...state, users: action.users };
 
-    case SET_CURRENT_PAGE:
-      return { ...state, currentPage: action.currentPage };
+    case SET_CURRENT_PAGE: return { ...state, currentPage: action.currentPage };
 
-    case SET_TOTAL_USERS_COUNT:
-      return { ...state, totalUsersCount: action.count };
+    case SET_TOTAL_USERS_COUNT: return { ...state, totalUsersCount: action.count };
 
-    case TOGGLE_IS_FETCHING:
-      return { ...state, isFetching: action.isFetching };
+    case TOGGLE_IS_FETCHING: return { ...state, isFetching: action.isFetching };
+
+    case SET_USER_PROFILE: return { ...state, userProfile: action.profile };
     
     default: return state;
   }
@@ -60,5 +59,6 @@ export const setUsers = (users) => ({ type: SET_USERS, users });
 export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
 export const setTotalUsersCount = (count) => ({ type: SET_TOTAL_USERS_COUNT, count });
 export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching });
+export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile });
 
 export default usersReducer;

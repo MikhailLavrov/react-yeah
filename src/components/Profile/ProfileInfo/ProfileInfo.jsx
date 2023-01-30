@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import c from './ProfileInfo.module.css';
 
 function ProfileInfo(props) {
-  let newProfile = props.state.profilePage.authors.map(author => {
+  let newProfile = props.authors.map(author => {
     return (
       <Fragment key={author.id} >
         <div className={c.profileInfo__header}>

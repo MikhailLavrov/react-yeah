@@ -1,32 +1,21 @@
 import c from './Users.module.css';
 import Preloader from '../common/Preloader/Preloader';
 import { NavLink } from 'react-router-dom';
+import UsersPagination from './UsersPagination/UsersPagination';
 
 const DEFAULT_AVATAR = 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg';
 
 let Users = (props) => {
-  
-  let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-  let pages = [];
-
-  // * Ограничил вывод кол-ва страниц
-  for (let i = 1; i <= pagesCount && i <= 10; i++) {
-    pages.push(i);
-  }
-  
   return (
+  
     <div className={c.users}>
       <h2>Users you may know</h2>
-      <div className={c.users__pagination}>
+      
+      <UsersPagination totalUsersCount={props.totalUsersCount} 
+                       pageSize={props.pageSize}
+                       currentPage={props.currentPage}
+                       onPageChange={props.onPageChange} />
 
-        {
-        pages.map(page => { 
-          return <span className={props.currentPage === page && c.users__selectedPage }
-                      onClick={ () => {props.onPageChange(page)} }>{page}</span>
-        })
-        }
-
-      </div>
       <ul className={c.users__list}>
 
         { 
@@ -36,7 +25,7 @@ let Users = (props) => {
         <li className={c.users__item} key={user.id}>
           <div className={c.users__avatar}>
             <img src={user.photos.small ? user.photos.small : DEFAULT_AVATAR} width={100} alt="avatar" />
-            <NavLink to={'/profile/' + user.id} className={c.users__profileLink}>View profile</NavLink>
+            <NavLink to={'/users/' + user.id} className={c.users__profileLink}>View profile</NavLink>
           </div>
           <div className={c.users__followButtonWrapper}>
             {!user.followed 
