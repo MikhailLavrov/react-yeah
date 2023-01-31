@@ -58,6 +58,10 @@
   text-transform: capitalize;
 }
 
+.userProfile__id {
+  margin-left: auto;
+}
+
 /* .userProfile__about {} */
 
 .userProfile__jobSearch {
@@ -65,3 +69,8 @@
 }
 
 /* .userProfile__jobObjective {} */
+
+.userProfile__socials {
+  display: flex;
+  gap: 5px;
+}

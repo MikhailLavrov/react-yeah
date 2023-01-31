@@ -3,7 +3,7 @@ import Preloader from '../common/Preloader/Preloader';
 import { NavLink } from 'react-router-dom';
 import UsersPagination from './UsersPagination/UsersPagination';
 
-const DEFAULT_AVATAR = 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg';
+import DEFAULT_AVATAR from '../../assets/default-avatar.jpg';
 
 let Users = (props) => {
   return (

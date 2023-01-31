@@ -1,6 +1,5 @@
 import c from './Preloader.module.css';
-
-const LOADER_SRC = 'https://thumbs.gfycat.com/ConventionalOblongFairybluebird-max-1mb.gif';
+import LOADER_SRC from '../../../assets/preloader.gif';
 
 let Preloader = (props) => {
   return (

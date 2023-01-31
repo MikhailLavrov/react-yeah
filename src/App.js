@@ -22,7 +22,7 @@ function App(props) {
           <Route path="/music" element={<Music/>}/>
           <Route path="/news" element={<News/>}/>
           <Route path="/settings" element={<Settings/>}/>
-          <Route path="/users/" element={<UsersContainer />}/>
+          <Route path="/users" element={<UsersContainer />}/>
           <Route path="/users/*" element={<UserProfileContainer />}/>
         </Routes>
       </div>
