@@ -13,16 +13,16 @@ import MAINLINK_ICON from '../../../assets/socials/mainlink.png';
 import DEFAULT_AVATAR from '../../../assets/default-avatar.jpg';
 
 let UserProfile = (props) => {
-  if (!props.userProfile) {
-    return <Preloader />
-  }
-
   return (
     <section className={c.userProfile}>
       <NavLink to={'/users/'} className={c.userProfile__returnLink}>&#129120; Return</NavLink>
 
+      
+      {
+      !props.user ? <Preloader /> :
+
       <div className={c.userProfile__info}>
-        <img src={props.userProfile.photos.large ? props.userProfile.photos.large : DEFAULT_AVATAR} 
+        <img src={props.user.photos.large ? props.user.photos.large : DEFAULT_AVATAR} 
              className={c.userProfile__image}
              width={300} 
              height={300} 
@@ -30,55 +30,56 @@ let UserProfile = (props) => {
         <div className={c.userProfile__data}>
           <p className={c.userProfile__name}>
             <span className={c.userProfile__key}>Name: </span>
-            <span className={c.userProfile__value}>{props.userProfile.fullName}</span>
+            <span className={c.userProfile__value}>{props.user.fullName}</span>
           </p>
-          {props.userProfile.aboutMe ? 
+          {props.user.aboutMe ? 
           <p className={c.userProfile__about}>
             <span className={c.userProfile__key}>About me: </span> 
-            <span className={c.userProfile__value}>{props.userProfile.aboutMe}</span> 
+            <span className={c.userProfile__value}>{props.user.aboutMe}</span> 
           </p> : null}
-          {props.userProfile.lookingForAJob ? <p className={c.userProfile__jobSearch}>I am looking for a job</p> : <p>I am not looking for a job</p>}
-          {props.userProfile.lookingForAJobDescription ? 
+          {props.user.lookingForAJob ? <p className={c.userProfile__jobSearch}>I am looking for a job</p> : <p>I am not looking for a job</p>}
+          {props.user.lookingForAJobDescription ? 
           <p className={c.userProfile__jobObjective}>
             <span className={c.userProfile__key}>Career objective: </span>
-            <span className={c.userProfile__value}>{props.userProfile.lookingForAJobDescription}</span>
+            <span className={c.userProfile__value}>{props.user.lookingForAJobDescription}</span>
           </p> : null}
           <div className={c.userProfile__socials}>
-            {props.userProfile.contacts.facebook ? 
-            <a href={props.userProfile.contacts.facebook}>
+            {props.user.contacts.facebook ? 
+            <a href={props.user.contacts.facebook}>
               <img width={25} src={FACEBOOK_ICON} alt="facebook" />
             </a> : null}
-            {props.userProfile.contacts.website ? 
-            <a href={props.userProfile.contacts.website}>
+            {props.user.contacts.website ? 
+            <a href={props.user.contacts.website}>
               <img width={25} src={WEBSITE_ICON} alt="website" />
             </a> : null}
-            {props.userProfile.contacts.vk ? 
-            <a href={props.userProfile.contacts.vk}>
+            {props.user.contacts.vk ? 
+            <a href={props.user.contacts.vk}>
               <img width={25} src={VK_ICON} alt="vk" />
             </a> : null}
-            {props.userProfile.contacts.twitter ? 
-            <a href={props.userProfile.contacts.twitter}>
+            {props.user.contacts.twitter ? 
+            <a href={props.user.contacts.twitter}>
               <img width={25} src={TWITTER_ICON} alt="twitter" />
             </a> : null}
-            {props.userProfile.contacts.instagram ? 
-            <a href={props.userProfile.contacts.instagram}>
+            {props.user.contacts.instagram ? 
+            <a href={props.user.contacts.instagram}>
               <img width={25} src={INSTAGRAM_ICON} alt="instagram" />
             </a> : null}
-            {props.userProfile.contacts.youtube ? 
-            <a href={props.userProfile.contacts.youtube}>
+            {props.user.contacts.youtube ? 
+            <a href={props.user.contacts.youtube}>
               <img width={25} src={YOUTUBE_ICON} alt="youtube" />
             </a> : null}
-            {props.userProfile.contacts.github ? 
-            <a href={props.userProfile.contacts.github}>
+            {props.user.contacts.github ? 
+            <a href={props.user.contacts.github}>
               <img width={25} src={GITHUB_ICON} alt="github" />
             </a> : null}
-            {props.userProfile.contacts.mainLink ? 
-            <a href={props.userProfile.contacts.mainLink}>
+            {props.user.contacts.mainLink ? 
+            <a href={props.user.contacts.mainLink}>
               <img width={25} src={MAINLINK_ICON} alt="mainLink" />
             </a> : null}
           </div>
         </div>
       </div>
+      }
     </section>
   )
 }

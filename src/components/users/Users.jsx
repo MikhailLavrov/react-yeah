@@ -7,7 +7,6 @@ import DEFAULT_AVATAR from '../../assets/default-avatar.jpg';
 
 let Users = (props) => {
   return (
-  
     <div className={c.users}>
       <h2>Users you may know</h2>
       
@@ -37,10 +36,10 @@ let Users = (props) => {
             <span>{user.name}</span>&nbsp;
             <span>{user.surname}</span>
           </p>
-          <div className={c.users__locationWrapper}>
+          {/* <div className={c.users__locationWrapper}>
             <p>{"user.location.country"}</p>
             <p>{"user.location.city"}</p>
-          </div>
+          </div> */}
           <p className={c.users__status}>Status: <br/> <span>"{user.status}"</span></p>
         </li>)
         }

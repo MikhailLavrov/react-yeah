@@ -19,11 +19,12 @@ function App(props) {
         <Routes>
           <Route path="/*" element={ <ProfileContainer /> } />
           <Route path="/dialogs/*" element={ <DialogsContainer /> } />
-          <Route path="/music" element={<Music/>}/>
-          <Route path="/news" element={<News/>}/>
-          <Route path="/settings" element={<Settings/>}/>
-          <Route path="/users" element={<UsersContainer />}/>
-          <Route path="/users/*" element={<UserProfileContainer />}/>
+          <Route path="/music" element={<Music/>} />
+          <Route path="/news" element={<News/>} />
+          <Route path="/settings" element={<Settings/>} />
+          <Route path="/users" element={<UsersContainer />} />
+          <Route path="/users/:id" element={<UserProfileContainer />} />
+          {/* <Route path="/users/:userId" element={<UserProfileContainer />} /> */}
         </Routes>
       </div>
     </div>

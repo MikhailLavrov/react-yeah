@@ -1,10 +1,9 @@
-import { Fragment } from 'react';
 import c from './ProfileInfo.module.css';
 
 function ProfileInfo(props) {
   let newProfile = props.authors.map(author => {
     return (
-      <Fragment key={author.id} >
+      <div className={c.profileInfo} key={author.id} >
         <div className={c.profileInfo__header}>
           <img src={author.headerImg} alt='#'></img>
         </div>
@@ -18,13 +17,13 @@ function ProfileInfo(props) {
             <p>{author.bio}</p>
           </div>
         </div>
-      </Fragment>
+      </div>
     )});
     
   return (
-    <div className={c.profileInfo}>
+    <>
       {newProfile}
-    </div>
+    </>
   );
 }
 
