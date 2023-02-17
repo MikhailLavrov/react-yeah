@@ -2,8 +2,8 @@ import c from './Users.module.css';
 import Preloader from '../common/Preloader/Preloader';
 import { NavLink } from 'react-router-dom';
 import UsersPagination from './UsersPagination/UsersPagination';
-import axios from 'axios';
 import DEFAULT_AVATAR from '../../assets/default-avatar.jpg';
+import { usersAPI } from '../../api/api';
 
 let Users = (props) => {
   return (
@@ -29,36 +29,34 @@ let Users = (props) => {
           <div className={c.users__followButtonWrapper}>
             {!user.followed 
 
-              ? <button onClick={() => { 
-                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, {
-                  withCredentials: true,
-                  headers: {
-                    'API-KEY': '34bcff41-44d6-4ca3-accf-0475dc9c7714',
-                  },
-                })
-                .then(response => { 
-                  if (response.data.resultCode === 0) {
-                    console.log('Подписка!');
-                    props.follow(user.id) 
-                  }
-                })
-              }}>Follow</button> 
-
-              : <button onClick={() => {
-                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
-                  withCredentials: true,
-                  headers: {
-                    'API-KEY': '34bcff41-44d6-4ca3-accf-0475dc9c7714',
-                  },
-                })
-                .then(response => { 
-                  if (response.data.resultCode === 0) {
-                    console.log('Отписка!');
-                    props.unfollow(user.id) 
-                  }
-                })
-              }}>Unfollow</button>
-            }
+              ? <button className={c.users__followButton} 
+                        disabled={props.followingInProgress.userId === user.id} 
+                        onClick={() => { 
+                          props.toggleFollowingProgress(true, user.id);
+                          usersAPI.follow(user)
+                          .then(data => { 
+                            if (data.resultCode === 0) {
+                              console.log(`Подписка на пользователя с id: ${user.id}`);
+                              props.follow(user.id)
+                            }
+                            props.toggleFollowingProgress(false, null)
+                          })
+                        }}>Follow</button> 
+                        
+                        : <button className={c.users__followButton} 
+                        disabled={props.followingInProgress.userId === user.id} 
+                        onClick={() => {
+                          props.toggleFollowingProgress(true, user.id);
+                          usersAPI.unfollow(user)
+                          .then(data => { 
+                            if (data.resultCode === 0) {
+                              console.log(`Отписка от пользователя с id: ${user.id}`);
+                              props.unfollow(user.id)
+                            }
+                            props.toggleFollowingProgress(false, null)
+                          })
+                        }}>Unfollow</button>
+              }
           </div>
           <p className={c.users__nameWrapper}>
             <span>{user.name}</span>&nbsp;

@@ -87,7 +87,9 @@
   align-items: flex-end;
 }
 
-.users__followButtonWrapper button {
+
+
+.users__followButton {
   padding: 10px;
   
   width: 100%;
@@ -102,8 +104,12 @@
   transition: all 0.2s linear;
 }
 
-.users__followButtonWrapper button:hover {
+.users__followButton:hover {
   background-color: rgba(25, 58, 47, 0.8);
+}
+
+.users__followButton:disabled {
+  opacity: .5;
 }
 
 .users__nameWrapper {
