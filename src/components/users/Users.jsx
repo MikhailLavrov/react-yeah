@@ -2,7 +2,7 @@ import c from './Users.module.css';
 import Preloader from '../common/Preloader/Preloader';
 import { NavLink } from 'react-router-dom';
 import UsersPagination from './UsersPagination/UsersPagination';
-
+import axios from 'axios';
 import DEFAULT_AVATAR from '../../assets/default-avatar.jpg';
 
 let Users = (props) => {
@@ -28,8 +28,36 @@ let Users = (props) => {
           </div>
           <div className={c.users__followButtonWrapper}>
             {!user.followed 
-              ? <button onClick={() => { props.follow(user.id) }}>Follow</button> 
-              : <button onClick={() => { props.unfollow(user.id) }}>Unfollow</button>
+
+              ? <button onClick={() => { 
+                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, {
+                  withCredentials: true,
+                  headers: {
+                    'API-KEY': '34bcff41-44d6-4ca3-accf-0475dc9c7714',
+                  },
+                })
+                .then(response => { 
+                  if (response.data.resultCode === 0) {
+                    console.log('Подписка!');
+                    props.follow(user.id) 
+                  }
+                })
+              }}>Follow</button> 
+
+              : <button onClick={() => {
+                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
+                  withCredentials: true,
+                  headers: {
+                    'API-KEY': '34bcff41-44d6-4ca3-accf-0475dc9c7714',
+                  },
+                })
+                .then(response => { 
+                  if (response.data.resultCode === 0) {
+                    console.log('Отписка!');
+                    props.unfollow(user.id) 
+                  }
+                })
+              }}>Unfollow</button>
             }
           </div>
           <p className={c.users__nameWrapper}>
