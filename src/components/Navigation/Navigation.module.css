@@ -17,3 +17,27 @@
   
   border-bottom: 1px solid rgba(0, 0, 0, 0.16);
 }
+
+.navigation__authBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation__loginLink {
+  margin: 20px 0;
+  text-decoration: none;
+  color: aliceblue;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  outline: 2px solid #fff;
+  border-radius: 2px;
+  background-color: rgba(240, 248, 255, 0.244);
+  line-height: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.navigation__loginLink:hover {
+  box-shadow: 0 0 10px #fff;
+}

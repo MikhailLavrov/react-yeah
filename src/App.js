@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import c from './App.module.css';
 import Header from './components/Header/Header';
-import Navigation from './components/Navigation/Navigation';
+import NavigationContainer from './components/Navigation/NavigationContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import Music from './components/Music/Music';
 import News from './components/News/News';
@@ -14,7 +14,7 @@ function App(props) {
   return (
     <div className={c.app}>
       <Header />
-      <Navigation sidebar={props.state.sidebar} profile={props.state.profilePage} dialogs={props.state.dialogsPage} />
+      <NavigationContainer />
       <div className={c.app__content}>
         <Routes>
           <Route path="/*" element={ <ProfileContainer /> } />
