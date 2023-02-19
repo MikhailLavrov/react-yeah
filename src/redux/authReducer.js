@@ -30,6 +30,7 @@ export const setAuthUserData = (id, login, email) => ({ type: SET_USER_DATA, dat
 export const getAuthProfile = () => {
   return (dispatch) => {
     authAPI.getAuth()
+      .then(response => response.data)
       .then(data => { 
       if (data.resultCode === 0) {
         let {id, login, email} = data.data;

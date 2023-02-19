@@ -9,6 +9,7 @@ import Settings from './components/Settings/Settings';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import UserProfileContainer from './components/Users/UserProfile/UserProfileContainer';
+import LoginPage from './components/login/Login';
 
 function App(props) {
   return (
@@ -24,7 +25,7 @@ function App(props) {
           <Route path="/settings" element={<Settings/>} />
           <Route path="/users" element={<UsersContainer />} />
           <Route path="/users/:id" element={<UserProfileContainer />} />
-          {/* <Route path="/users/:userId" element={<UserProfileContainer />} /> */}
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </div>
     </div>

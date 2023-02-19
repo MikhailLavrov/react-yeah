@@ -2,6 +2,7 @@ import c from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Messages/Message/Message';
 import React from 'react';
+import { Navigate } from 'react-router-dom';
 
 function Dialogs(props) {
   let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem name={dialog.name} surname={dialog.surname} avaPath={dialog.avaPath} key={dialog.id} />)
@@ -20,6 +21,8 @@ function Dialogs(props) {
     }
     textareaElement.current.value = '';
   }
+
+  if (!props.isAuth) return <Navigate to={'/login'} />
 
   return (
     <div className={c.dialogs}>

@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import Navigation from "./Navigation";
-import { setAuthUserData } from "../../redux/authReducer";
 import { getAuthProfile } from "../../redux/authReducer";
 
 class NavigationContainer extends React.Component {
@@ -22,4 +21,4 @@ let mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps, {setAuthUserData, getAuthProfile})(NavigationContainer);
+export default connect(mapStateToProps, {getAuthProfile})(NavigationContainer);

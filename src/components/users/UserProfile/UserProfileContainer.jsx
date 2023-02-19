@@ -10,7 +10,8 @@ const UserProfileContainer = () => {
   
   useEffect(() => {
     usersAPI.chooseUser(params.id)
-    .then(response => setUser(response))
+    .then(response => response.data)
+    .then(data => setUser(data))
   }, [params.id])
 
   return (
