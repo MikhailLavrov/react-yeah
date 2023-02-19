@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { compose } from "redux";
 import Navigation from "./Navigation";
 import { getAuthProfile } from "../../redux/authReducer";
 
@@ -21,4 +22,6 @@ let mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps, {getAuthProfile})(NavigationContainer);
+export default compose(
+  connect(mapStateToProps, {getAuthProfile})
+) (NavigationContainer)
