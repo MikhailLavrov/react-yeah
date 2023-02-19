@@ -13,8 +13,8 @@ function Navigation(props) {
     <nav className={c.navigation}>
       <div className={c.navigation__authBlock}>
 
-        {props.isAuth ? 
-        <AuthorInfo login={props.login} id={props.id} email={props.email} />
+        {props.auth.isAuth ? 
+        <AuthorInfo login={props.auth.login} id={props.auth.id} email={props.auth.email} />
         // <AuthorInfo authors={props.profile.authors} />
         : <NavLink className={c.navigation__loginLink} to={'/login'}>Login</NavLink>
         }

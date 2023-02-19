@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import UserProfile from './UserProfile';
+import { usersAPI } from '../../../api/api';
 
 const UserProfileContainer = () => {
   const [user, setUser] = useState();
@@ -8,8 +9,7 @@ const UserProfileContainer = () => {
   const params = useParams();
   
   useEffect(() => {
-    fetch(`https://social-network.samuraijs.com/api/1.0/profile/${params.id}`)
-    .then(response => response.json())
+    usersAPI.chooseUser(params.id)
     .then(response => setUser(response))
   }, [params.id])
 

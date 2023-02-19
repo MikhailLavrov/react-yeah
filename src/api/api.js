@@ -14,13 +14,25 @@ export const usersAPI = {
                    .then(response => response.data)
   },
 
-  follow(user) {
-    return instance.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {})
+  follow(userId) {
+    return instance.post(`follow/${userId}`, {})
                   .then(response => response.data)
   },
 
-  unfollow(user) {
-    return instance.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {})
+  unfollow(userId) {
+    return instance.delete(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`, {})
+                  .then(response => response.data)
+  },
+
+  chooseUser(paramsId) {
+    return instance.get(`profile/${paramsId}`)
+                  .then(response => response.data)
+  }
+}
+
+export const authAPI = {
+  getAuth() {
+    return instance.get(`https://social-network.samuraijs.com/api/1.0/auth/me`, {})
                   .then(response => response.data)
   },
 }

@@ -3,7 +3,6 @@ import Preloader from '../common/Preloader/Preloader';
 import { NavLink } from 'react-router-dom';
 import UsersPagination from './UsersPagination/UsersPagination';
 import DEFAULT_AVATAR from '../../assets/default-avatar.jpg';
-import { usersAPI } from '../../api/api';
 
 let Users = (props) => {
   return (
@@ -30,32 +29,13 @@ let Users = (props) => {
             {!user.followed 
 
               ? <button className={c.users__followButton} 
-                        disabled={props.followingInProgress.userId === user.id} 
-                        onClick={() => { 
-                          props.toggleFollowingProgress(true, user.id);
-                          usersAPI.follow(user)
-                          .then(data => { 
-                            if (data.resultCode === 0) {
-                              console.log(`Подписка на пользователя с id: ${user.id}`);
-                              props.follow(user.id)
-                            }
-                            props.toggleFollowingProgress(false, null)
-                          })
-                        }}>Follow</button> 
+                        disabled={props.followingInProgress.userId === user.id}
+                        onClick={() => {props.follow(user.id)}}>Follow</button> 
                         
-                        : <button className={c.users__followButton} 
-                        disabled={props.followingInProgress.userId === user.id} 
-                        onClick={() => {
-                          props.toggleFollowingProgress(true, user.id);
-                          usersAPI.unfollow(user)
-                          .then(data => { 
-                            if (data.resultCode === 0) {
-                              console.log(`Отписка от пользователя с id: ${user.id}`);
-                              props.unfollow(user.id)
-                            }
-                            props.toggleFollowingProgress(false, null)
-                          })
-                        }}>Unfollow</button>
+              : <button className={c.users__followButton} 
+              disabled={props.followingInProgress.userId === user.id}
+              onClick={() => {props.unfollow(user.id)}}>Unfollow</button>
+              
               }
           </div>
           <p className={c.users__nameWrapper}>
