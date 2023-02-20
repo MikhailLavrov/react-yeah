@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 
 export const ProfileStatus = (props) => {
   const [editMode, setEditMode] = useState(false);
-  const [status, setStatus] = useState(props.status);
+  const [status, setStatus] = useState(props.status || '');
 
   useEffect(() => {
-    setStatus(status);
-  }, [status]);
+    setStatus(props.status || '');
+  }, [props.status]);
 
   const activateEditMode = () => setEditMode(true);
 
@@ -20,7 +20,7 @@ export const ProfileStatus = (props) => {
   return (
     <>
       {!editMode ? (
-        <span onDoubleClick={activateEditMode}>{props.status || '<empty>'}</span>
+        <span onDoubleClick={activateEditMode}>{status || '<empty>'}</span>
       ) : (
         <input
           autoFocus
@@ -31,4 +31,4 @@ export const ProfileStatus = (props) => {
       )}
     </>
   );
-}
+};

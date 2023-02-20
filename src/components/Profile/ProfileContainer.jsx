@@ -8,10 +8,8 @@ import { getStatus, updateStatus } from '../../redux/profileReducer';
 
 const ProfileContainer = (props) => {
   useEffect(() => {
-    let userId = 27693;
-    
     props.getAuthProfile();
-    props.getStatus(userId);
+    props.getStatus(27693);
   }, []);
 
   return <Profile {...props} />
