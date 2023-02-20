@@ -41,6 +41,7 @@
 
 .profileInfo__description p {
   margin: 0;
+  margin-bottom: 10px;
 }
 
 .profileInfo__description span {
@@ -55,4 +56,9 @@
   
   object-fit: cover;
   aspect-ratio: 1;
+}
+
+.profileInfo__status {
+  display: flex;
+  gap: 10px;
 }

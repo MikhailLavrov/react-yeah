@@ -1,29 +1,26 @@
 import c from './ProfileInfo.module.css';
+import { ProfileStatus } from './ProfileStatus';
 
-function ProfileInfo(props) {
-  let newProfile = props.authors.map(author => {
-    return (
-      <div className={c.profileInfo} key={author.id} >
-        <div className={c.profileInfo__header}>
-          <img src={author.headerImg} alt='#'></img>
+const ProfileInfo = (props) => {
+  return (
+    <div className={c.profileInfo} key={props.id} >
+      <div className={c.profileInfo__header}>
+        <img src={props.headerImg} alt='#'></img>
+      </div>
+      <div className={c.profileInfo__descriptionWrapper}>
+        <div className={c.profileInfo__ava}>
+          <img src={props.avatarImg} alt='#'></img>
         </div>
-        <div className={c.profileInfo__descriptionWrapper}>
-          <div className={c.profileInfo__ava}>
-            <img src={author.avatarImg} alt='#'></img>
-          </div>
-          <div className={c.profileInfo__description}>
-            <h3>{author.name}</h3>
-            <span>Age: {author.age}</span>
-            <p>{author.bio}</p>
+        <div className={c.profileInfo__description}>
+          <h3>{props.login}</h3>
+          <span>Age: {props.age}</span>
+          <p>{props.email}</p>
+          <div className={c.profileInfo__status}>
+            Status: <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
           </div>
         </div>
       </div>
-    )});
-    
-  return (
-    <>
-      {newProfile}
-    </>
+    </div>
   );
 }
 

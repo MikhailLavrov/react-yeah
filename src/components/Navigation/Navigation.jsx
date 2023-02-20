@@ -6,18 +6,16 @@ import { NavLink } from 'react-router-dom';
 
 function Navigation(props) {
   const createNavPoints = props.sidebar.navPoints.map(navPoint => (
-    <NavItem  path={navPoint.path} name={navPoint.name} key={navPoint.id} />
+    <NavItem path={navPoint.path} name={navPoint.name} key={navPoint.id} />
   ));
-
+  
   return (
     <nav className={c.navigation}>
       <div className={c.navigation__authBlock}>
 
-        {props.auth.isAuth ? 
-        <AuthorInfo login={props.auth.login} id={props.auth.id} email={props.auth.email} />
-        // <AuthorInfo authors={props.profile.authors} />
-        : <NavLink className={c.navigation__loginLink} to={'/login'}>Login</NavLink>
-        }
+        { props.auth.isAuth
+        ? <AuthorInfo login={props.auth.login} id={props.auth.id} email={props.auth.email} avatarImg={props.auth.avatarImg} />
+        : <NavLink className={c.navigation__loginLink} to={'/login'}>Login</NavLink> }
 
       </div>
       <ul className={c.navigation__list}>

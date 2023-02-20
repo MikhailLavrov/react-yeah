@@ -24,38 +24,29 @@ let initialState = {
 
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FOLLOW:
-      return {
-        state: {...state},
-        users: state.users.map(user => {
-          if (user.id === action.userId) {
-            return {...user, followed: true};
-          }
-          return user;
-        }),
-      };
-
-    case UNFOLLOW:
-      return {
-        state: {...state},
-        users: state.users.map(user => {
-          if (user.id === action.userId) {
-            return {...user, followed: false};
-          }
-          return user;
-        }),
-      };
-
+    case FOLLOW: return {
+      state: {...state},
+      users: state.users.map(user => {
+        if (user.id === action.userId) {
+          return {...user, followed: true};
+        }
+        return user;
+      }),
+    };
+    case UNFOLLOW: return {
+      state: {...state},
+      users: state.users.map(user => {
+        if (user.id === action.userId) {
+          return {...user, followed: false};
+        }
+        return user;
+      }),
+    };
     case SET_USERS: return { ...state, users: action.users };
-
     case SET_CURRENT_PAGE: return { ...state, currentPage: action.currentPage };
-
     case SET_TOTAL_USERS_COUNT: return { ...state, totalUsersCount: action.count };
-
     case TOGGLE_IS_FETCHING: return { ...state, isFetching: action.isFetching };
-    
     case SET_USER_PROFILE: return { ...state, userProfile: action.profile };
-
     case TOGGLE_IS_FOLLOWING_PROGRESS: return {  
       ...state, 
        followingInProgress: {
@@ -63,7 +54,7 @@ const usersReducer = (state = initialState, action) => {
          isFetching: action.isFetching,
          userId: action.userId,
        }
-    }
+    };
     default: return state;
   }
 };

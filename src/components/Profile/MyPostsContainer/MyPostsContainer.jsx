@@ -13,7 +13,7 @@ class MyPostsContainer extends React.Component {
 let mapStateToProps = (state) => {
   return {
     posts: state.profilePage.posts,
-    authors: state.profilePage.authors,
+    avatar: state.auth.avatarImg,
     newPostText: state.profilePage.newPostText,
   };
 };
