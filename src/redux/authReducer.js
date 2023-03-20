@@ -18,7 +18,7 @@ const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USER_DATA: return {
       ...state,
-      ...action.data,
+      ...action.payload,
       isAuth: true,
     };
     default: return state;
@@ -26,7 +26,7 @@ const authReducer = (state = initialState, action) => {
 };
 
 //  Action creators
-export const setAuthUserData = (id, login, email) => ({ type: SET_USER_DATA, data: {id, login, email} });
+export const setAuthUserData = (id, login, email, isAuth) => ({ type: SET_USER_DATA, payload: {id, login, email, isAuth} });
 
 //  Thunks
 export const getAuthProfile = () => {
@@ -36,9 +36,29 @@ export const getAuthProfile = () => {
       .then(data => {
       if (data.resultCode === 0) {
         let {id, login, email} = data.data;
-        dispatch(setAuthUserData(id, login, email))
+        dispatch(setAuthUserData(id, login, email, true));
       }
     })
+  }
+}
+
+export const loginThunk = (email, password, rememberMe) => {
+  return (dispatch) => {
+    authAPI.login(email, password, rememberMe)
+      .then(console.log('Привет из санки login'))
+      .then(response => response.data)
+      .then(data => {
+        if (data.resultCode === 0) {
+          dispatch(getAuthProfile())
+        }
+      })
+  }
+}
+
+export const logoutThunk = () => {
+  return (dispatch) => {
+    authAPI.logout()
+      .then(dispatch(setAuthUserData(null, null, null, false)));
   }
 }
 

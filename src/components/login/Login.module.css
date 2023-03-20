@@ -1,0 +1,30 @@
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.login__form input {
+  padding: 15px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.login__form button {
+  padding: 10px;
+}
+
+.login__inputWrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.login__form span {
+  color: red;
+  position: absolute;
+  font-size: 12px;
+  bottom: -5px;
+  left: 5px;
+}

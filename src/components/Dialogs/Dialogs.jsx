@@ -21,6 +21,25 @@ function Dialogs(props) {
     textareaElement.current.value = '';
   }
 
+  const AddMessageForm = (props) => {
+    return (
+      <div>
+        <form>
+          <div className={c.dialogs__addBlock}>
+            <textarea ref={textareaElement} 
+                      value={props.newMessageText}
+                      onChange={ onMessageChange }
+                      name="post" 
+                      cols="30" rows="3" 
+                      placeholder='Write something here' />
+            <button type='button' 
+                    onClick={ addMessage }>🚀</button>
+          </div>
+        </form>
+      </div>
+    )
+  }
+
   return (
     <div className={c.dialogs}>
       <h2 className={c.dialogs__header}>Dialogs</h2>
@@ -32,15 +51,7 @@ function Dialogs(props) {
           {messagesElements}
         </ul>
       </div>
-      <div className={c.dialogs__addBlock}>
-        <textarea  ref={textareaElement} 
-                   value={props.newMessageText}
-                   onChange={ onMessageChange }
-                   name="post" 
-                   cols="30" rows="3" 
-                   placeholder='Write something here' />
-        <button type='button' onClick={ addMessage }>🚀</button>
-      </div>
+      <AddMessageForm />
     </div>
   )
 }
