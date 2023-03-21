@@ -16,7 +16,7 @@ const Profile = () => {
     // props.getStatus(27693);
   }, []);
 
-  console.log('Profile FC render');
+  console.log('Profile FC render & isAuth: ', author.isAuth);
   return (
     <div className={c.profile}>
       {!author.isAuth 

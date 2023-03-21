@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { follow, unfollow, getUsers } from '../../redux/usersReducer';
 
 export const Users = () => {
+  const isAuth = useSelector((state) => state.auth.isAuth)
   const dispatch = useDispatch();
   const usersPage = useSelector((state) => state.usersPage);
   const {users, pageSize, totalUsersCount, currentPage, isFetching, followingInProgress} = usersPage;
@@ -37,24 +38,28 @@ export const Users = () => {
                 <NavLink to={'/users/' + user.id} 
                          className={c.users__profileLink}>View profile</NavLink>
               </div>
-              <div className={c.users__followButtonWrapper}>
-                {!user.followed 
-                  ? <button className={c.users__followButton} 
-                            disabled={followingInProgress.userId === user.id}
-                            onClick={() => {
-                              dispatch(follow(user.id));
-                            }}>
-                            Follow</button> 
-                            
-                  : <button className={c.users__followButton} 
-                            disabled={followingInProgress.userId === user.id}
-                            onClick={() => {
-                              dispatch(unfollow(user.id))
-                            }}>
-                            Unfollow</button>
-                  
-                  }
-              </div>
+              {isAuth
+              ? <div className={c.users__followButtonWrapper}>
+                  {!user.followed 
+                    ? <button className={c.users__followButton} 
+                              disabled={followingInProgress.userId === user.id}
+                              onClick={() => {
+                                dispatch(follow(user.id));
+                              }}>
+                              Follow</button> 
+                              
+                    : <button className={c.users__followButton} 
+                              disabled={followingInProgress.userId === user.id}
+                              onClick={() => {
+                                dispatch(unfollow(user.id))
+                              }}>
+                              Unfollow</button>
+                    
+                    }
+                </div>
+              : ''
+              }
+
               <p className={c.users__nameWrapper}>
                 <span>{user.name}</span>&nbsp;
                 <span>{user.surname}</span>

@@ -14,12 +14,12 @@ const Navigation = () => {
              name={navPoint.name}
              key={navPoint.id} />
   ));
-  
+  console.log('Navigation isAuth: ', auth.isAuth);
   return (
     <nav className={c.navigation}>
       <div className={c.navigation__authBlock}>
 
-        { auth.isAuth
+        {auth.isAuth
         ? <AuthorInfo login={auth.login} 
                       id={auth.id} 
                       email={auth.email} 
@@ -30,7 +30,7 @@ const Navigation = () => {
       <ul className={c.navigation__list}>
         {createNavPoints}
       </ul>
-      <NavContacts dialogs={dialogs} />
+      {auth.isAuth ? <NavContacts dialogs={dialogs} /> : ''}
     </nav>
   );
 }
