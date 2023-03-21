@@ -1,0 +1,71 @@
+// @mixin fontHelvetica ($weight: 400, $fs, $color, $lh, $fst: normal) {
+//   font-family: "Helvetika Neue", "Arial", sans-serif;
+//   font-style: $fst;
+//   font-size: $fs;
+//   line-height: $lh;
+//   font-weight: $weight;
+//   color: $color;
+// }
+
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover:not(.focus-visible) {
+      @content;
+    }
+  }
+}
+
+@mixin focus {
+  &.focus-visible:focus {
+    @content;
+  }
+}
+
+@mixin active {
+  &.focus-visible:active {
+    @content;
+  }
+}
+
+@mixin hover-focus {
+  @media (hover: hover) {
+    &:hover:not(.focus-visible) {
+      @content;
+    }
+  }
+
+  &.focus-visible:focus {
+    @content;
+  }
+}
+
+// Mobile first
+@mixin vp-375 {
+  @media (min-width: $vp-375) {
+    @content;
+  }
+}
+
+@mixin vp-768 {
+  @media (min-width: $vp-768) {
+    @content;
+  }
+}
+
+@mixin vp-1120 {
+  @media (min-width: $vp-1120) {
+    @content;
+  }
+}
+
+@mixin vp-1440 {
+  @media (min-width: $vp-1440) {
+    @content;
+  }
+}

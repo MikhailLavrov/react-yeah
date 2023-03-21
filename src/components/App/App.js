@@ -1,15 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 import c from './App.module.scss';
-import Header from './components/Header/Header';
-import Navigation from './components/Navigation/Navigation';
-import Profile from './components/Profile/Profile';
-import Music from './components/Music/Music';
-import News from './components/News/News';
-import Settings from './components/Settings/Settings';
-import Dialogs from './components/Dialogs/Dialogs';
-import Users from './components/Users/Users';
-import LoginPage from './components/Login/Login';
-import UserProfile from './components/Users/UserProfile/UserProfile';
+import Header from '../Header/Header';
+import Navigation from '../Navigation/Navigation';
+import Profile from '../Profile/Profile';
+import Music from '../Music/Music';
+import News from '../News/News';
+import Settings from '../Settings/Settings';
+import Dialogs from '../Dialogs/Dialogs';
+import Users from '../Users/Users';
+import LoginPage from '../Login/Login';
+import UserProfile from '../Users/UserProfile/UserProfile';
 
 function App() {
   return (
