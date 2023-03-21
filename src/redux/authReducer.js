@@ -44,7 +44,6 @@ export const getAuthProfile = () => {
 export const loginThunk = (email, password, rememberMe) => {
   return (dispatch) => {
     authAPI.login(email, password, rememberMe)
-      .then(console.log('Привет из санки login'))
       .then(response => response.data)
       .then(data => {
         if (data.resultCode === 0) {

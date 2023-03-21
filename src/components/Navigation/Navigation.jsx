@@ -14,7 +14,7 @@ const Navigation = () => {
              name={navPoint.name}
              key={navPoint.id} />
   ));
-  console.log('Navigation isAuth: ', auth.isAuth);
+  
   return (
     <nav className={c.navigation}>
       <div className={c.navigation__authBlock}>

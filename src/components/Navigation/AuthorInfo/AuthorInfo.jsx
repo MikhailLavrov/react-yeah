@@ -8,7 +8,6 @@ const AuthorInfo = (props) => {
   const navigate = useNavigate();
 
   const onClickLogoutHandler = () => {
-    console.log('logout');
     dispatch(logoutThunk())
     navigate(`/login`)
   }

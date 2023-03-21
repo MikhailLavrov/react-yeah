@@ -17,10 +17,11 @@ export const ProfileStatus = (props) => {
     setEditMode(false);
 
     dispatch(updateStatus(status));
-    // props.updateStatus(status);
   };
 
-  const onStatusChange = (e) => setStatus(e.target.value);
+  const onStatusChange = (e) => {
+    setStatus(e.target.value)
+  };
 
   return (
     <>

@@ -21,7 +21,6 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onSubmit = (values, { setSubmitting }) => {
-    // console.log(JSON.stringify(values, null, 2));
     dispatch(loginThunk(values.email, values.password, values.rememberMe));
     navigate(`/profile`)
     setSubmitting(false);

@@ -5,18 +5,20 @@ import Login from '../Login/Login';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getAuthProfile } from '../../redux/authReducer';
+import { getStatus } from '../../redux/profileReducer';
 
 const Profile = () => {
   const dispatch = useDispatch();
   const author = useSelector((state) => state.auth);
   const status = useSelector((state) => state.profilePage.status);
-
+console.log(author.id);
   useEffect(() => {
     dispatch(getAuthProfile());
-    // props.getStatus(27693);
-  }, []);
+    if (author.id) {
+      dispatch(getStatus(author.id));
+    }
+  }, [author.id]);
 
-  console.log('Profile FC render & isAuth: ', author.isAuth);
   return (
     <div className={c.profile}>
       {!author.isAuth 
@@ -29,8 +31,7 @@ const Profile = () => {
             avatarImg={author.avatarImg} 
             headerImg={author.headerImg} 
             age={author.age} 
-            status={status} 
-            // updateStatus={props.updateStatus} 
+            status={status}
             />
           <MyPosts />
         </>}
