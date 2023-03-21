@@ -1,5 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import c from './Login.module.css';
+import c from './Login.module.scss';
 import * as yup from 'yup';
 import { loginThunk } from '../../redux/authReducer';
 import { useDispatch } from 'react-redux';

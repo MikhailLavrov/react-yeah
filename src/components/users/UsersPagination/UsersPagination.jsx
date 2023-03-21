@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import c from './UsersPagination.module.css';
+import c from './UsersPagination.module.scss';
 import { setCurrentPage, getUsers } from '../../../redux/usersReducer';
 
 let UsersPagination = (props) => {

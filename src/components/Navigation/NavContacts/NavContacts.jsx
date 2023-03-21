@@ -1,4 +1,4 @@
-import c from './NavContacts.module.css';
+import c from './NavContacts.module.scss';
 import DialogItem from '../../Dialogs/DialogItem/DialogItem';
 
 function NavContacts(props) {

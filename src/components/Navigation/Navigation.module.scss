@@ -26,18 +26,20 @@
 
 .navigation__loginLink {
   margin: 20px 0;
-  text-decoration: none;
-  color: aliceblue;
   padding: 10px;
+
+  color: aliceblue;
   font-size: 18px;
+  line-height: 1;
   font-weight: 500;
+  
   outline: 2px solid #fff;
   border-radius: 2px;
   background-color: rgba(240, 248, 255, 0.244);
-  line-height: 1;
+  text-decoration: none;
   transition: all 0.2s ease-in-out;
-}
 
-.navigation__loginLink:hover {
-  box-shadow: 0 0 10px #fff;
+  &:hover {
+    box-shadow: 0 0 10px #fff;
+  }
 }

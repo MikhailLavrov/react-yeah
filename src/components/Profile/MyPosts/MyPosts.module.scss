@@ -41,8 +41,8 @@
   border-bottom-right-radius: 10px;
   cursor: pointer;
   background-color: rgb(238, 245, 220);
-}
 
-.myposts__addBlock button:hover {
-  background-color: rgb(236, 248, 207);
+  &:hover {
+    background-color: rgb(236, 248, 207);
+  }
 }

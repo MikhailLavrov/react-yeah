@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import c from './App.module.css';
+import c from './App.module.scss';
 import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
 import Profile from './components/Profile/Profile';
@@ -18,14 +18,14 @@ function App() {
       <Navigation />
       <div className={c.app__content}>
         <Routes>
-          <Route path="/*" element={ <Profile /> } />
-          <Route path="/dialogs/*" element={ <Dialogs /> } />
-          <Route path="/music" element={<Music/>} />
-          <Route path="/news" element={<News/>} />
-          <Route path="/settings" element={<Settings/>} />
+          <Route path="/*" element={<Profile />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/music" element={<Music />} />
           <Route path="/users" element={<Users />} />
-          <Route path="/users/:id" element={<UserProfile />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/settings" element={<Settings/>} />
+          <Route path="/dialogs/*" element={<Dialogs /> } />
+          <Route path="/users/:id" element={<UserProfile />} />
         </Routes>
       </div>
     </div>

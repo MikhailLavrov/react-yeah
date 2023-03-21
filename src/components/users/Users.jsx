@@ -1,4 +1,4 @@
-import c from './Users.module.css';
+import c from './Users.module.scss';
 import Preloader from '../common/Preloader/Preloader';
 import { NavLink } from 'react-router-dom';
 import UsersPagination from './UsersPagination/UsersPagination';

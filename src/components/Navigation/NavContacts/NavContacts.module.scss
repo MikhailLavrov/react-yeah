@@ -28,10 +28,10 @@
   background-color: transparent;
   box-shadow: none;
   border-radius: 0%;
-}
 
-.navigation__contactsList a:hover {
-  background-color: aliceblue;
+  &:hover {
+    background-color: aliceblue;
+  }
 }
 
 .navigation__contactsList p {

@@ -1,4 +1,4 @@
-import c from './Message.module.css';
+import c from './Message.module.scss';
 
 function Message(props) {
   return (

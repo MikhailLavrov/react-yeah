@@ -1,4 +1,4 @@
-import c from './Navigation.module.css';
+import c from './Navigation.module.scss';
 import NavItem from './NavItem/NavItem';
 import NavContacts from './NavContacts/NavContacts';
 import AuthorInfo from './AuthorInfo/AuthorInfo';

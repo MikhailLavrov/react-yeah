@@ -16,10 +16,10 @@
 
   background-color: rgba(25, 58, 47, 0.6);
   transition: all 0.2s ease-in;
-}
 
-.userProfile__returnLink:hover {
-  background-color: rgba(25, 58, 47, 0.8);
+  &:hover {
+    background-color: rgba(25, 58, 47, 0.8);
+  }
 }
 
 .userProfile__info {
@@ -62,13 +62,9 @@
   margin-left: auto;
 }
 
-/* .userProfile__about {} */
-
 .userProfile__jobSearch {
   color: darkred;
 }
-
-/* .userProfile__jobObjective {} */
 
 .userProfile__socials {
   display: flex;

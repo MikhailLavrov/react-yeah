@@ -10,14 +10,11 @@
   color: rgb(255, 255, 255);
   box-sizing: border-box;
   transition: all 0.2s linear;
-}
 
-.item a:hover,
-.item a.active {
-  background-color: aliceblue;
-  color: rgb(40, 0, 77);
-}
-
-.item a.active {
-  box-shadow: 0px 6px 15px -10px #000000;
+  &:hover,
+  &.active {
+    background-color: aliceblue;
+    color: rgb(40, 0, 77);
+    box-shadow: 0px 6px 15px -10px #000000;
+  }
 }

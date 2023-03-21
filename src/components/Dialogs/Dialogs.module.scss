@@ -8,12 +8,6 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.458);
 }
 
-.dialogs ul {
-  margin: 0;
-  
-  list-style: none;
-}
-
 .dialogs__innerWrapper {
   margin-bottom: 20px;
 
@@ -25,39 +19,37 @@
 .dialogs__contactsList {
   padding: 0;
   
-  display: flex;
-  flex-direction: column;
   gap: 10px;
 }
 
 .dialogs__messagesList {
   padding: 10px;
   
-  display: flex;
-  flex-direction: column;
   gap: 20px;
 }
 
 .dialogs__contactsList,
 .dialogs__messagesList {
+  margin: 0;
+
   max-height: 73vh;
   
+  display: flex;
+  flex-direction: column;
+  
+  list-style: none;
   overflow-y: auto;
   overflow-x: hidden;
-}
 
-.dialogs__contactsList::-webkit-scrollbar,
-.dialogs__messagesList::-webkit-scrollbar {
-  width: 3px;
-  
-  background-color: rgba(127, 155, 255, 0.153);
-}
+  &::-webkit-scrollbar {
+    width: 3px;
+    background-color: rgba(127, 155, 255, 0.153);
+  }
 
-.dialogs__contactsList::-webkit-scrollbar-thumb,
-.dialogs__messagesList::-webkit-scrollbar-thumb {
-  width: 3px;
-  
-  background-color: rgba(97, 73, 182, 0.53);
+  &::-webkit-scrollbar-thumb {
+    width: 3px;
+    background-color: rgba(97, 73, 182, 0.53);
+  }
 }
 
 .dialogs__addBlock {
@@ -96,9 +88,9 @@
 
   cursor: pointer;
   transition: all 0.2s ease;
-}
 
-.dialogs__addBlock button:hover {
-  background-color: rgba(156, 207, 251, 0.5);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    &:hover {
+    background-color: rgba(156, 207, 251, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
 }

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import c from './MyPosts.module.css';
+import c from './MyPosts.module.scss';
 import Post from './Post/Post';
 import { addPost, updatePost } from '../../../redux/profileReducer';
 

@@ -1,4 +1,4 @@
-import c from './News.module.css';
+import c from './News.module.scss';
 
 function News() {
   return (

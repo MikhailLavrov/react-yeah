@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logoutThunk } from '../../../redux/authReducer';
-import c from './AuthorInfo.module.css';
+import c from './AuthorInfo.module.scss';
 
 const AuthorInfo = (props) => {
   const dispatch = useDispatch();

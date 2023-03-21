@@ -1,4 +1,4 @@
-import c from './Dialogs.module.css';
+import c from './Dialogs.module.scss';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import React, { useRef, useState } from 'react';

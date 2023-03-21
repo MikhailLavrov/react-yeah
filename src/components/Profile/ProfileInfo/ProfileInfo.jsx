@@ -1,4 +1,4 @@
-import c from './ProfileInfo.module.css';
+import c from './ProfileInfo.module.scss';
 import { ProfileStatus } from './ProfileStatus';
 
 const ProfileInfo = (props) => {

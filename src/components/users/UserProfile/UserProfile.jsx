@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import c from './UserProfile.module.css';
+import c from './UserProfile.module.scss';
 import Preloader from '../../common/Preloader/Preloader';
 import { usersAPI } from "../../../api/api";
 

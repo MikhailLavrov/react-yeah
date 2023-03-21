@@ -1,4 +1,4 @@
-import c from './Header.module.css';
+import c from './Header.module.scss';
 
 const LOGO_SRC = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png';
 
