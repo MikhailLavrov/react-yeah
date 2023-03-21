@@ -13,7 +13,7 @@ let loginSchema = yup.object({
   password: 
     yup.string()
     .required('Password is required')
-    .min(8, 'Password should be 8 chars min.'),
+    .min(4, 'Password should be 4 chars min.'),
 });
 
 const Login = () => {

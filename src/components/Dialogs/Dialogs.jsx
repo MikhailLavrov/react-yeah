@@ -1,43 +1,35 @@
 import c from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
-import Message from './Messages/Message/Message';
-import React from 'react';
+import Message from './Message/Message';
+import React, { useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addMessageAC } from '../../redux/dialogsReducer';
 
-function Dialogs(props) {
-  let dialogsElements = props.dialogsPage.dialogs.map(dialog => <DialogItem name={dialog.name} surname={dialog.surname} avaPath={dialog.avaPath} key={dialog.id} />)
-  let messagesElements = props.dialogsPage.messages.map(message => <Message message={message.message} key={message.id}/>)
+const Dialogs = () => {
+  const dispatch = useDispatch();
+  const dialogsPage = useSelector((state) => state.dialogsPage)
+  const textareaRef = useRef(null);
+  const [newMessageText, setNewMessageText] = useState('');
 
-  let textareaElement = React.createRef();
+  let dialogsElements = dialogsPage.dialogs.map(dialog =>
+    <DialogItem name={dialog.name} 
+                surname={dialog.surname} 
+                avaPath={dialog.avaPath} 
+                id={dialog.id} />)
 
-  let onMessageChange = () => {
-    let text = textareaElement.current.value;
-    props.updateMessage(text);
+  let messagesElements = dialogsPage.messages.map(message => 
+    <Message message={message.message} 
+             id={message.id}/>)
+
+  const onMessageChange = (event) => {
+    setNewMessageText(event.target.value);
   }
 
-  let addMessage = () => {
-    if (textareaElement.current.value !== '') {
-      props.addMessage();
+  const onSubmitHandle = () => {
+    if (newMessageText !== '') {
+      dispatch(addMessageAC(newMessageText));
+      setNewMessageText('');
     }
-    textareaElement.current.value = '';
-  }
-
-  const AddMessageForm = (props) => {
-    return (
-      <div>
-        <form>
-          <div className={c.dialogs__addBlock}>
-            <textarea ref={textareaElement} 
-                      value={props.newMessageText}
-                      onChange={ onMessageChange }
-                      name="post" 
-                      cols="30" rows="3" 
-                      placeholder='Write something here' />
-            <button type='button' 
-                    onClick={ addMessage }>🚀</button>
-          </div>
-        </form>
-      </div>
-    )
   }
 
   return (
@@ -51,7 +43,22 @@ function Dialogs(props) {
           {messagesElements}
         </ul>
       </div>
-      <AddMessageForm />
+      <div>
+        <div className={c.dialogs__addBlock}>
+          <form onSubmit={onSubmitHandle}>
+            <textarea 
+              ref={textareaRef} 
+              value={newMessageText}
+              onChange={onMessageChange}
+              name="post" 
+              cols="30" 
+              rows="3" 
+              placeholder='Write something here' 
+              />
+            <button type='submit'>🚀</button>
+          </form>
+        </div>
+      </div>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import c from './Profile.module.css';
-import MyPostsContainer from './MyPostsContainer/MyPostsContainer';
+import { MyPosts } from './MyPosts/MyPosts';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import Login from '../Login/Login';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,19 +20,19 @@ const Profile = () => {
   return (
     <div className={c.profile}>
       {!author.isAuth 
-      ? <Login /> 
-      : <>
-        <ProfileInfo 
-          id={author.id} 
-          login={author.login} 
-          email={author.email} 
-          avatarImg={author.avatarImg} 
-          headerImg={author.headerImg} 
-          age={author.age} 
-          status={status} 
-          // updateStatus={props.updateStatus} 
-          />
-        <MyPostsContainer />
+        ? <Login /> 
+        : <>
+          <ProfileInfo 
+            id={author.id} 
+            login={author.login} 
+            email={author.email} 
+            avatarImg={author.avatarImg} 
+            headerImg={author.headerImg} 
+            age={author.age} 
+            status={status} 
+            // updateStatus={props.updateStatus} 
+            />
+          <MyPosts />
         </>}
     </div>
   );
