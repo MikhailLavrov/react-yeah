@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-yeah/static/css/main.d0873584.css",
-    "main.js": "/react-yeah/static/js/main.2eaf055d.js",
+    "main.js": "/react-yeah/static/js/main.a2294c16.js",
     "static/js/787.4e97c1a5.chunk.js": "/react-yeah/static/js/787.4e97c1a5.chunk.js",
     "static/media/Intersect.png": "/react-yeah/static/media/Intersect.942c25aed0b5c9827e39.png",
     "static/media/logo-textless.png": "/react-yeah/static/media/logo-textless.d32355c79c4a4aee4b1b.png",
@@ -17,11 +17,11 @@
     "static/media/preloader.gif": "/react-yeah/static/media/preloader.42ef9531b7271474d02f.gif",
     "index.html": "/react-yeah/index.html",
     "main.d0873584.css.map": "/react-yeah/static/css/main.d0873584.css.map",
-    "main.2eaf055d.js.map": "/react-yeah/static/js/main.2eaf055d.js.map",
+    "main.a2294c16.js.map": "/react-yeah/static/js/main.a2294c16.js.map",
     "787.4e97c1a5.chunk.js.map": "/react-yeah/static/js/787.4e97c1a5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d0873584.css",
-    "static/js/main.2eaf055d.js"
+    "static/js/main.a2294c16.js"
   ]
 }
