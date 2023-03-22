@@ -1,3 +1,91 @@
+@import '../../styles/vars';
+
+.login {
+  padding: 0;
+  padding-top: 50px;
+
+  height: 100%;
+}
+
+.login__container {
+  padding: 40px !important;
+
+  align-items: center;
+  
+  background-color: $color-default-white;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+}
+
+.login__mascot {
+  margin-bottom: 20px;
+
+  position: relative;
+
+  & img {
+    transform: scaleX(-1);
+  }
+}
+
+.login__popover {
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px $color-default-black;
+  cursor: pointer;
+
+  &:hover {
+    & .login__popoverText {
+      display: block;
+      position: absolute;
+      right: calc(-100% - 15px);
+      bottom: 50%;
+    }
+  }
+}
+
+.login__popoverText {
+  padding: 5px 15px;
+  margin: 0;
+  
+  width: max-content;
+  
+  display: none;
+  
+  background-color: $color-default-white;
+  box-shadow: 0 0 0 1px $color-default-black;
+  border-radius: 50px;
+  z-index: 1;
+
+  animation: scale 0.7s ease-in-out;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.login__title {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
 .login__form {
   display: flex;
   flex-direction: column;
@@ -12,7 +100,12 @@
 }
 
 .login__form button {
-  padding: 10px;
+  padding: 15px;
+  width: 100%;
+
+  background-color: $color-default-contrast-2;
+  border: none;
+  color: $color-default-white;
 }
 
 .login__inputWrapper {
@@ -27,4 +120,15 @@
   font-size: 12px;
   bottom: -5px;
   left: 5px;
+}
+
+.login__remember {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.login__remember input {
+  margin: 0;
 }

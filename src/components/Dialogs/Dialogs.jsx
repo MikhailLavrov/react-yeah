@@ -30,7 +30,6 @@ const Dialogs = () => {
   const onMessageChange = (event) => {
     setNewMessageText(event.target.value);
   }
-  console.log(auth.isAuth);
 
   const onSubmitHandle = () => {
     if (newMessageText !== '') {

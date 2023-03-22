@@ -1,12 +1,25 @@
 import c from './Header.module.scss';
-
-const LOGO_SRC = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png';
+import Navigation from '../Navigation/Navigation';
+import { Logo } from '../Logo/Logo';
+import AuthorInfo from '../Navigation/AuthorInfo/AuthorInfo';
+import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
+import { getAuthProfile } from '../../redux/authReducer';
 
 function Header() {
+  const dispatch = useDispatch();
+  const isAuth = useSelector((state) => state.auth.isAuth);
+
+  useEffect(() => {
+    dispatch(getAuthProfile());
+  }, []);
+
   return (
     <header className={c.header}>
-      <img src={LOGO_SRC} alt="logo" />
-      <span>React JS Network</span>
+      <Logo />
+      <Navigation />
+      {isAuth ? <AuthorInfo /> : <div className={c.header__login}><NavLink to={'/login.'}>Login</NavLink></div>}
     </header>
   );
 }

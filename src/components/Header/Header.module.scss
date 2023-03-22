@@ -1,34 +1,36 @@
-.header {
-  padding: 10px;
+@import '../../styles/vars';
 
+.header {
+  padding: 10px 20px;
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  
+
+  background: rgba($color-default-black, 0.4);
+}
+
+.header__login {
   display: flex;
   align-items: center;
-
-  grid-area: h;
-
-  background: linear-gradient(90deg, rgba(25, 58, 47, 0.7) 0%, rgba(255, 255, 255, 0.2) 100%);
 }
 
-.header img {
-  margin-right: 10px;
+.header__login a {
+  margin-left: auto;
+  padding: 10px;
+
+  max-width: 100%;
+  width: auto;
   
-  height: 100%;
-  
-  pointer-events: none;
-  animation: rotateLogo infinite 20s linear;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-@keyframes rotateLogo {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
-
-.header span {
+  text-decoration: none;
   font-weight: 500;
-  font-size: 18px;
-  color: rgb(84, 232, 251);
+  color: $color-default-contrast-1;
+
+  background-color: $color-default-white;
+  border-radius: 5px;
 }

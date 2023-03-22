@@ -17,7 +17,6 @@ export const MyPosts = () => {
           id={post.id} 
           />)
 
-          console.log(statePosts[0]);
   let onSubmitHandle = (e) => {
     e.preventDefault();
 

@@ -1,9 +1,5 @@
 .navigation {
-  height: 100%;
-  grid-area: n;
-
-  background: linear-gradient(180deg, rgba(25, 58, 47, 0.7) 0%, rgba(248, 248, 248, 0.5) 100%);
-  overflow: hidden;
+  margin: 0 auto;
 }
 
 .navigation ul {
@@ -13,33 +9,7 @@
 .navigation__list {
   padding: 0;
   margin: 0;
-  margin-bottom: 20px;
-  
-  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
-}
 
-.navigation__authBlock {
   display: flex;
-  justify-content: center;
   align-items: center;
-}
-
-.navigation__loginLink {
-  margin: 20px 0;
-  padding: 10px;
-
-  color: aliceblue;
-  font-size: 18px;
-  line-height: 1;
-  font-weight: 500;
-  
-  outline: 2px solid #fff;
-  border-radius: 2px;
-  background-color: rgba(240, 248, 255, 0.244);
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    box-shadow: 0 0 10px #fff;
-  }
 }
