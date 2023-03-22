@@ -1,33 +1,35 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import c from './MyPosts.module.scss';
 import Post from './Post/Post';
-import { addPost, updatePost } from '../../../redux/profileReducer';
+import { addPost } from '../../../redux/profileReducer';
 
 export const MyPosts = () => {
+  const [postText, setPostText] = useState('');
+  let randomNum = new Date().getTime() % 9000 + 1000;
+
   const dispatch = useDispatch();
   const statePosts = useSelector((state) => state.profilePage.posts);
-  const avatar = useSelector((state) => state.auth.avatarImg);
-  const newPostText = useSelector((state) => state.profilePage.newPostText);
 
   let posts = statePosts.map(post => 
     <Post message={post.message} 
-          likeCounter={post.likeCounter} 
-          avatar={avatar} 
-          key={post.id} 
+          likeCounter={post.likeCounter}
+          id={post.id} 
           />)
 
-  let newPostRef = useRef();
+          console.log(statePosts[0]);
+  let onSubmitHandle = (e) => {
+    e.preventDefault();
 
-  let onSubmitHandle = () => {
-    if (newPostRef.current.value !== '') {
-      dispatch(addPost());
+    if (postText.trim() !== '') {
+      dispatch(addPost(randomNum, postText));
     }
+    setPostText('');
   }
 
-  let onPostChange = () => {
-    let text = newPostRef.current.value;
-    dispatch(updatePost(text));
+  let onPostChange = (e) => {
+    const text = e.target.value;
+    setPostText((text));
   }
 
   return (
@@ -35,9 +37,8 @@ export const MyPosts = () => {
         <div className={c.myposts__addBlock}>
           <form onSubmit={onSubmitHandle}>
             <textarea name="post" 
-                      value={ newPostText } 
-                      ref={ newPostRef } 
-                      onChange={ onPostChange } 
+                      value={postText} 
+                      onChange={onPostChange} 
                       cols="30" rows="10" 
                       placeholder='Write something here' 
                       />

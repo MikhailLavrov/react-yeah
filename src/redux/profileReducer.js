@@ -1,7 +1,6 @@
 import { profileAPI } from "../api/api";
 
 const ADD_POST = 'ADD-POST';
-const UPDATE_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_STATUS = 'SET-STATUS';
 
 let initialState = {
@@ -11,7 +10,6 @@ let initialState = {
     {id: 3, message: 'Does anybody hear me?', likeCounter: 2},
     {id: 4, message: 'Damn... 🥲', likeCounter: 2},
   ],
-  newPostText: '',
   status: '',
 };
 
@@ -20,24 +18,18 @@ const profileReducer = (state = initialState, action) => {
     
     case ADD_POST: return {
       ...state,
-      posts: [{ id: 0, message: state.newPostText, likeCounter: 0 }, ...state.posts],
-      newPostText: '',
+      posts: [{ id: action.id, message: action.text, likeCounter: 0 }, ...state.posts],
     };
     case SET_STATUS: return {
       ...state,
       status: action.status, 
-    };
-    case UPDATE_POST_TEXT: return {
-      ...state, 
-      newPostText: action.newText,
     };
     default: return state;
   }
 };
 
 // Action creators
-export const addPost = () => ({ type: ADD_POST });
-export const updatePost = (text) => ({ type: UPDATE_POST_TEXT, newText: text });
+export const addPost = (id, text) => ({ type: ADD_POST, id, text });
 export const setStatus = (status) => ({ type: SET_STATUS, status });
 
 // Thunks

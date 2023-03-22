@@ -9,29 +9,29 @@ import { getStatus } from '../../redux/profileReducer';
 
 const Profile = () => {
   const dispatch = useDispatch();
-  const author = useSelector((state) => state.auth);
-  const status = useSelector((state) => state.profilePage.status);
-console.log(author.id);
+  const auth = useSelector((state) => state.auth);
+  const profilePage = useSelector((state) => state.profilePage);
+  
   useEffect(() => {
     dispatch(getAuthProfile());
-    if (author.id) {
-      dispatch(getStatus(author.id));
+    if (auth.id) {
+      dispatch(getStatus(auth.id));
     }
-  }, [author.id]);
+  }, [auth.id]);
 
   return (
     <div className={c.profile}>
-      {!author.isAuth 
+      {!auth.isAuth 
         ? <Login /> 
         : <>
           <ProfileInfo 
-            id={author.id} 
-            login={author.login} 
-            email={author.email} 
-            avatarImg={author.avatarImg} 
-            headerImg={author.headerImg} 
-            age={author.age} 
-            status={status}
+            id={auth.id} 
+            login={auth.login} 
+            email={auth.email} 
+            avatarImg={auth.avatarImg} 
+            headerImg={auth.headerImg} 
+            age={auth.age} 
+            status={profilePage.status}
             />
           <MyPosts />
         </>}
