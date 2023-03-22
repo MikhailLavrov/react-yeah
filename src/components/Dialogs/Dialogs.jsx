@@ -1,17 +1,21 @@
 import c from './Dialogs.module.scss';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addMessageAC } from '../../redux/dialogsReducer';
 import Login from '../Login/Login';
+import { getAuthProfile } from '../../redux/authReducer';
 
 const Dialogs = () => {
   const dispatch = useDispatch();
-  const dialogsPage = useSelector((state) => state.dialogsPage)
-  const isAuth = useSelector((state) => state.auth.isAuth)
-  const textareaRef = useRef(null);
+  const dialogsPage = useSelector((state) => state.dialogsPage);
+  const auth = useSelector((state) => state.auth);
   const [newMessageText, setNewMessageText] = useState('');
+
+  useEffect(() => {
+    dispatch(getAuthProfile());
+  }, []);
 
   let dialogsElements = dialogsPage.dialogs.map(dialog =>
     <DialogItem name={dialog.name} 
@@ -26,6 +30,7 @@ const Dialogs = () => {
   const onMessageChange = (event) => {
     setNewMessageText(event.target.value);
   }
+  console.log(auth.isAuth);
 
   const onSubmitHandle = () => {
     if (newMessageText !== '') {
@@ -35,8 +40,9 @@ const Dialogs = () => {
   }
 
   return (<>
-    {isAuth
-    ? <div className={c.dialogs}>
+    {!auth.isAuth
+    ? <Login />
+    : <div className={c.dialogs}>
         <h2 className={c.dialogs__header}>Dialogs</h2>
         <div className={c.dialogs__innerWrapper}>
           <ul className={c.dialogs__contactsList}>
@@ -50,7 +56,6 @@ const Dialogs = () => {
           <div className={c.dialogs__addBlock}>
             <form onSubmit={onSubmitHandle}>
               <textarea 
-                ref={textareaRef} 
                 value={newMessageText}
                 onChange={onMessageChange}
                 name="post" 
@@ -63,8 +68,7 @@ const Dialogs = () => {
           </div>
         </div>
       </div>
-    : <Login />
-  }
+    }
   </>)
 }
 
