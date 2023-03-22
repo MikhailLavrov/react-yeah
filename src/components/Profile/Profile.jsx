@@ -4,7 +4,6 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 import Login from '../Login/Login';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getAuthProfile } from '../../redux/authReducer';
 import { getStatus } from '../../redux/profileReducer';
 
 const Profile = () => {
@@ -13,11 +12,10 @@ const Profile = () => {
   const profilePage = useSelector((state) => state.profilePage);
   
   useEffect(() => {
-    dispatch(getAuthProfile());
     if (auth.id) {
       dispatch(getStatus(auth.id));
     }
-  }, [auth.id]);
+  }, [auth.id, dispatch]);
 
   return (
     <div className={c.profile}>
