@@ -12,7 +12,7 @@ function Header({authorized}) {
       {authorized 
         ? <AuthorInfo /> 
         : <div className={c.header__login}>
-            <NavLink to={'/login'}>Login</NavLink>
+            <NavLink to={'/profile'}>Login</NavLink>
           </div>
       }
     </header>

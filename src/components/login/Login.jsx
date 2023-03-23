@@ -3,7 +3,6 @@ import c from './Login.module.scss';
 import * as yup from 'yup';
 import { loginThunk } from '../../redux/authReducer';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import LOGIN_MASCOT from '../../assets/login-mascot.png';
 
 let loginSchema = yup.object({
@@ -19,11 +18,9 @@ let loginSchema = yup.object({
 
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const onSubmit = (values, { setSubmitting }) => {
     dispatch(loginThunk(values.email, values.password, values.rememberMe));
-    navigate(`/profile`)
     setSubmitting(false);
   };
 

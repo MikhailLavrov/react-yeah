@@ -106,6 +106,12 @@
   background-color: $color-default-contrast-2;
   border: none;
   color: $color-default-white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 .login__inputWrapper {
@@ -131,4 +137,10 @@
 
 .login__remember input {
   margin: 0;
+}
+
+.login__remember,
+.login__remember label,
+.login__remember input {
+  cursor: pointer;
 }

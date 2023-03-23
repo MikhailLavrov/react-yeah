@@ -1,16 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { logoutThunk } from '../../../redux/authReducer';
 import c from './AuthorInfo.module.scss';
 
 const AuthorInfo = () => {
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const onClickLogoutHandler = () => {
     dispatch(logoutThunk())
-    navigate(`/login`)
   }
 
   return (
