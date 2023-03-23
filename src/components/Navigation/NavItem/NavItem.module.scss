@@ -1,12 +1,16 @@
 @import '../../../styles/vars';
 
-.item a {
+.navItem a {
   padding: 15px;
 
   width: 100%;
 
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  gap: 5px;
+
   text-decoration: none;
   
   color: $color-default-white;
@@ -15,6 +19,18 @@
 
   &:hover,
   &.active {
-    box-shadow: 0 -3px 0 0 $color-default-contrast-1 inset;
+    box-shadow: 0 -4px 0 0 $color-default-contrast-1 inset;
+
+    & .navItem__icon {
+      transform: scale(1.3) translateZ(0);
+    }
+  }
+}
+
+.navItem__icon {
+  transition: all 0.2s ease-in-out;
+  
+  & img {
+    transform: scale(0.9);
   }
 }

@@ -16,14 +16,13 @@ import DEFAULT_AVATAR from '../../../assets/default-avatar.jpg';
 
 export const UserProfile = () => {
   const [user, setUser] = useState();
-  // Get the userId param from the URL.
-  const params = useParams();
+  const {id} = useParams();
   
   useEffect(() => {
-    usersAPI.getProfile(params.id)
+    usersAPI.getProfile(id)
     .then(response => response.data)
     .then(data => setUser(data))
-  }, [params.id])
+  }, [id])
 
   return (
     <section className={c.userProfile}>

@@ -10,7 +10,8 @@ const Navigation = () => {
   const createNavPoints = sidebar.navPoints.map(navPoint => (
     <NavItem path={navPoint.path}
              name={navPoint.name}
-             key={navPoint.id} />
+             key={navPoint.id}
+             icon={navPoint.icon} />
   ));
   
   return (

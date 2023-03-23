@@ -1,7 +1,8 @@
 @import '../../styles/vars';
 
 .logo {
-  width: min-content;
+  display: flex;
+  align-items: center;
 }
 
 .logo__link {
