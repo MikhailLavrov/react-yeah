@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-yeah/static/css/main.d0873584.css",
-    "main.js": "/react-yeah/static/js/main.a2294c16.js",
+    "main.css": "/react-yeah/static/css/main.182c3978.css",
+    "main.js": "/react-yeah/static/js/main.35a347c8.js",
     "static/js/787.4e97c1a5.chunk.js": "/react-yeah/static/js/787.4e97c1a5.chunk.js",
     "static/media/Intersect.png": "/react-yeah/static/media/Intersect.942c25aed0b5c9827e39.png",
     "static/media/logo-textless.png": "/react-yeah/static/media/logo-textless.d32355c79c4a4aee4b1b.png",
@@ -15,13 +15,19 @@
     "static/media/github.png": "/react-yeah/static/media/github.ba76f2dfb4e4a2396030.png",
     "static/media/youtube.png": "/react-yeah/static/media/youtube.3985cc602eba37fa37ca.png",
     "static/media/preloader.gif": "/react-yeah/static/media/preloader.42ef9531b7271474d02f.gif",
+    "static/media/settings.svg": "/react-yeah/static/media/settings.2c8458a108c279b004bccbbcaa5d617a.svg",
+    "static/media/dialogs.svg": "/react-yeah/static/media/dialogs.da56f82c68e726c5bb47c0570f5b2934.svg",
+    "static/media/profile.svg": "/react-yeah/static/media/profile.c244700ee88531f1155491d52f7221b4.svg",
+    "static/media/music.svg": "/react-yeah/static/media/music.969a71fed87faeff0beb61af44fccb1c.svg",
     "index.html": "/react-yeah/index.html",
-    "main.d0873584.css.map": "/react-yeah/static/css/main.d0873584.css.map",
-    "main.a2294c16.js.map": "/react-yeah/static/js/main.a2294c16.js.map",
+    "static/media/news.svg": "/react-yeah/static/media/news.5dbfdd66d6f9f873135d7202ea5637a5.svg",
+    "static/media/users.svg": "/react-yeah/static/media/users.a78588686b8d271fb428a827081e3c27.svg",
+    "main.182c3978.css.map": "/react-yeah/static/css/main.182c3978.css.map",
+    "main.35a347c8.js.map": "/react-yeah/static/js/main.35a347c8.js.map",
     "787.4e97c1a5.chunk.js.map": "/react-yeah/static/js/787.4e97c1a5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0873584.css",
-    "static/js/main.a2294c16.js"
+    "static/css/main.182c3978.css",
+    "static/js/main.35a347c8.js"
   ]
 }
