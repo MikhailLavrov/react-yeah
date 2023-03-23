@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import c from './UserProfile.module.scss';
-import Preloader from '../../common/Preloader/Preloader';
+import Preloader from '../../Preloader/Preloader';
 import { usersAPI } from "../../../api/api";
 
 import INSTAGRAM_ICON from '../../../assets/socials/Intersect.png';
@@ -64,37 +64,37 @@ export const UserProfile = () => {
 
               <div className={c.userProfile__socials}>
                 {user.contacts.facebook ? 
-                <a href={user.contacts.facebook}>
+                <Link to={user.contacts.facebook}>
                   <img width={25} src={FACEBOOK_ICON} alt="facebook" />
-                </a> : null}
+                </Link> : null}
                 {user.contacts.website ? 
-                <a href={user.contacts.website}>
+                <Link to={user.contacts.website}>
                   <img width={25} src={WEBSITE_ICON} alt="website" />
-                </a> : null}
+                </Link> : null}
                 {user.contacts.vk ? 
-                <a href={user.contacts.vk}>
+                <Link to={user.contacts.vk}>
                   <img width={25} src={VK_ICON} alt="vk" />
-                </a> : null}
+                </Link> : null}
                 {user.contacts.twitter ? 
-                <a href={user.contacts.twitter}>
+                <Link to={user.contacts.twitter}>
                   <img width={25} src={TWITTER_ICON} alt="twitter" />
-                </a> : null}
+                </Link> : null}
                 {user.contacts.instagram ? 
-                <a href={user.contacts.instagram}>
+                <Link to={user.contacts.instagram}>
                   <img width={25} src={INSTAGRAM_ICON} alt="instagram" />
-                </a> : null}
+                </Link> : null}
                 {user.contacts.youtube ? 
-                <a href={user.contacts.youtube}>
+                <Link to={user.contacts.youtube}>
                   <img width={25} src={YOUTUBE_ICON} alt="youtube" />
-                </a> : null}
+                </Link> : null}
                 {user.contacts.github ? 
-                <a href={user.contacts.github}>
+                <Link to={user.contacts.github}>
                   <img width={25} src={GITHUB_ICON} alt="github" />
-                </a> : null}
+                </Link> : null}
                 {user.contacts.mainLink ? 
-                <a href={user.contacts.mainLink}>
+                <Link to={user.contacts.mainLink}>
                   <img width={25} src={MAINLINK_ICON} alt="mainLink" />
-                </a> : null}
+                </Link> : null}
             </div>
           </div>
         </div>

@@ -1,5 +1,9 @@
 @import '../../styles/vars';
 
+.logo {
+  width: min-content;
+}
+
 .logo__link {
   display: flex;
   align-items: center;

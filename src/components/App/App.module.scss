@@ -4,9 +4,3 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
-
-.app__content {
-  min-height: 100%;
-  
-  flex-grow: 1;
-}

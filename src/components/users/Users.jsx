@@ -1,5 +1,5 @@
 import c from './Users.module.scss';
-import Preloader from '../common/Preloader/Preloader';
+import Preloader from '../Preloader/Preloader';
 import { NavLink } from 'react-router-dom';
 import UsersPagination from './UsersPagination/UsersPagination';
 import DEFAULT_AVATAR from '../../assets/default-avatar.jpg';

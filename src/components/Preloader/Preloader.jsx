@@ -1,5 +1,5 @@
 import c from './Preloader.module.scss';
-import LOADER_SRC from '../../../assets/preloader.gif';
+import LOADER_SRC from '../../assets/preloader.gif';
 
 let Preloader = (props) => {
   return (

@@ -6,7 +6,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(180px, 1fr));
-  
+  gap: 20px;
 
   background: rgba($color-default-black, 0.4);
 }

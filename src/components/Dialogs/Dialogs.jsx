@@ -32,7 +32,7 @@ const Dialogs = () => {
   }
 
   return (
-      <div className={c.dialogs}>
+      <section className={c.dialogs}>
         <h2 className={c.dialogs__header}>Dialogs</h2>
         <div className={c.dialogs__innerWrapper}>
           <ul className={c.dialogs__contactsList}>
@@ -57,7 +57,7 @@ const Dialogs = () => {
             </form>
           </div>
         </div>
-      </div>)
+      </section>)
 }
 
 export default Dialogs;
