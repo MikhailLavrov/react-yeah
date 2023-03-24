@@ -4,51 +4,50 @@
   background-color: $color-default-white;
 }
 
-.myposts__posts {
-  padding: 10px 0;
-  
-  height: auto;
-  
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  
-  font-weight: 600;
-  color: rgb(0, 55, 55);
-  text-align: center;
-  overflow: auto;
+// .myposts__addBlock {}
+
+.myposts__addForm {
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  position: relative;
 }
 
-.myposts__addBlock {
-  display: flex;
-  flex-direction: column;
-  
-  box-shadow: 0px 6px 15px -10px #00000075;
-}
+.myposts__addinput {
+  padding: 15px 20px;
+  width: 100%;
 
-.myposts__addBlock textarea {
-  padding: 20px;
-  
-  height: 100px;
-  
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border: none;
-  background-color: rgba(245, 245, 220, 0.482);
+  font-size: 16px;
   outline: none;
-  resize: none;
+  border: none;
 }
 
-.myposts__addBlock button {
+.myposts__error {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  border: 1px solid $color-default-contrast-2;
+  border-radius: 10px;
+  padding: 5px;
+  color: $color-default-contrast-1;
+  background-color: $color-default-white;
+}
+
+.myposts__addButton {
   padding: 10px;
-  
+
+  color: $color-default-contrast-2;
+  transition: all 0.2s ease-in-out;
+  font-size: 24px;
+
   border: none;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  background-color: transparent;
   cursor: pointer;
-  background-color: rgb(238, 245, 220);
 
   &:hover {
-    background-color: rgb(236, 248, 207);
+    color: $color-default-contrast-1;
+    transform: rotate(-90deg);
   }
 }
+
+// .myposts__posts {}

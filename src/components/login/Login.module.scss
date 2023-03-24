@@ -112,9 +112,28 @@
   color: $color-default-white;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  transform: perspective(1px) translateZ(0);
 
-  &:hover {
-    opacity: 0.9;
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $color-default-contrast-1;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+
+  &:hover:before,
+   .login__form button:focus:before,
+   .login__form button:active:before {
+    transform: scaleX(1);
   }
 }
 

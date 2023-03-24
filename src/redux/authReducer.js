@@ -30,7 +30,6 @@ export const getAuthProfile = () => {
     authAPI.getAuth()
       .then(response => response.data)
       .then(data => {
-        console.log(data);
       if (data.resultCode === 0) {
         let {id, login, email} = data.data;
         dispatch(setAuthUserData(id, login, email, true));
