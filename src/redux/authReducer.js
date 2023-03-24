@@ -1,6 +1,5 @@
 import { authAPI } from "../api/api";
 import DEFAULT_AVATAR from '../assets/default-avatar.jpg';
-import DEFAULT_PROFILE_HEADER from '../assets/default-profile-header.jpg';
 
 const SET_USER_DATA = 'SET-USER-DATA';
 
@@ -9,9 +8,7 @@ let initialState = {
   login: null,
   email: null,
   isAuth: false,
-  age: 34,
   avatarImg: DEFAULT_AVATAR,
-  headerImg: DEFAULT_PROFILE_HEADER,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -33,6 +30,7 @@ export const getAuthProfile = () => {
     authAPI.getAuth()
       .then(response => response.data)
       .then(data => {
+        console.log(data);
       if (data.resultCode === 0) {
         let {id, login, email} = data.data;
         dispatch(setAuthUserData(id, login, email, true));

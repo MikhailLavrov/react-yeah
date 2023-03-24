@@ -1,3 +1,9 @@
+@import '../../../styles/vars.scss';
+
+.myposts {
+  background-color: $color-default-white;
+}
+
 .myposts__posts {
   padding: 10px 0;
   

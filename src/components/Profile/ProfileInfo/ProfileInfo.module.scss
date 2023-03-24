@@ -1,64 +1,39 @@
+@import '../../../styles/vars.scss';
+
 .profileInfo {
   margin-bottom: 10px;
 }
 
-// .profileInfo__header {
-//   margin-bottom: 10px;
-//   overflow: hidden;
-// }
-
-// .profileInfo__header img {
-//   animation: slowscale 100s infinite ease-in;
-// }
-
-@keyframes slowscale {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.3);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.profileInfo__descriptionWrapper {
-  display: grid;
-  grid-template-columns: 2fr 10fr;
-  
-  background-color: rgba(205, 209, 202, 0.433);
-}
-
 .profileInfo__description {
   padding: 20px;
+  background-color: $color-default-white;
 }
 
-.profileInfo__description h3 {
-  margin: 0;
-  margin-bottom: 20px;
+.profileInfo__avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(transparent 30%, $color-default-white 100%);
 }
 
-.profileInfo__description p {
-  margin: 0;
-  margin-bottom: 10px;
-}
-
-.profileInfo__description span {
-  margin-bottom: 20px;
-  display: block;
-}
-
-.profileInfo__ava img {
+.profileInfo__avatar img {
   width: 100%;
   max-width: 200px;
   height: 100%;
   
+  outline: 5px solid $color-default-white;
+  border-radius: 50%;
   object-fit: cover;
   aspect-ratio: 1;
 }
 
-.profileInfo__status {
-  display: flex;
-  gap: 10px;
+.profileInfo__name {
+  margin: 0;
+  margin-bottom: 10px;
+
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
 }

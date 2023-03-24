@@ -10,11 +10,14 @@
 .author__avatar {
   border-radius: 50%;
   object-fit: cover;
+
+  outline: 1px solid $color-default-contrast-2;
+  outline-offset: 3px;
 }
 
 .author__name {
   font-weight: 500;
-  color: $color-default-white;
+  color: $color-default-contrast-2;
 }
 
 .author__logoutButton {

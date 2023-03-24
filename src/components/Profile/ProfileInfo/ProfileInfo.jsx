@@ -1,24 +1,15 @@
 import c from './ProfileInfo.module.scss';
-import { ProfileStatus } from './ProfileStatus';
+import { ProfileStatus } from '../ProfileStatus/ProfileStatus';
 
 const ProfileInfo = (props) => {
   return (
     <div className={c.profileInfo} key={props.id} >
-      <div className={c.profileInfo__header}>
-        <img src={props.headerImg} alt='#'></img>
+      <div className={c.profileInfo__avatar}>
+        <img width={200} src={props.avatarImg} alt='#'></img>
       </div>
-      <div className={c.profileInfo__descriptionWrapper}>
-        <div className={c.profileInfo__ava}>
-          <img src={props.avatarImg} alt='#'></img>
-        </div>
-        <div className={c.profileInfo__description}>
-          <h3>{props.login}</h3>
-          <span>Age: {props.age}</span>
-          <p>{props.email}</p>
-          <div className={c.profileInfo__status}>
-            Status: <ProfileStatus status={props.status} />
-          </div>
-        </div>
+      <div className={c.profileInfo__description}>
+        <p className={c.profileInfo__name}>{props.login}</p>
+        <ProfileStatus />
       </div>
     </div>
   );

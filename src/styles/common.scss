@@ -21,7 +21,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: rgba($color-default-contrast-2, 0.1);
+  // background-color: rgba($color-default-contrast-2, 0.1);
+  
+  background:
+    // linear-gradient(rgba($color-default-black, 0.3) 0%, rgba($color-default-white, 0) 100%),
+    linear-gradient(-45deg, rgba($color-default-contrast-1, 0.3) 25%, rgba($color-default-contrast-2, 0.3) 75%);
 }
 
 img {

@@ -1,35 +1,21 @@
 import c from './Profile.module.scss';
 import { MyPosts } from './MyPosts/MyPosts';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { getStatus } from '../../redux/profileReducer';
+import { useSelector } from 'react-redux';
 
 const Profile = () => {
-  const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
-  const profilePage = useSelector((state) => state.profilePage);
-  
-  useEffect(() => {
-    if (auth.id) {
-      dispatch(getStatus(auth.id));
-    }
-  }, [auth.id, dispatch]);
 
   return (
     <section className={c.profile}>
-      <>
+      <div className={`${c.profile__container} container`}>
         <ProfileInfo 
           id={auth.id} 
-          login={auth.login} 
-          email={auth.email} 
-          avatarImg={auth.avatarImg} 
-          headerImg={auth.headerImg} 
-          age={auth.age} 
-          status={profilePage.status}
+          login={auth.login}
+          avatarImg={auth.avatarImg}
           />
         <MyPosts />
-      </>
+      </div>
     </section>
   );
 }
