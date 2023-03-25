@@ -15,7 +15,7 @@ export const FollowList = ({followers}) => {
   return (
     <ul className={c.followList}>
       {follower}
-      {followers.length > 5 && <span className={c.followList__moreCounter}>+ {followers.length - 5}</span>}
+      {followers.length > 5 && <span className={c.followList__moreCounter}>+{followers.length - 5}</span>}
     </ul>
   );
 }

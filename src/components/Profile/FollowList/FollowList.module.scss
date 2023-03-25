@@ -37,7 +37,7 @@
   color: $color-default-contrast-1;
   border-radius: 10px;
   font-weight: 600;
-  border: 1px solid $color-default-contrast-2;
+  box-shadow: 0 0 0 1px $color-default-contrast-1, 0 0 0 2px $color-default-white, 0 0 0 3px $color-default-contrast-1;
   padding: 2px;
   margin-left: -15px;
 }

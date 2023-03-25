@@ -1,6 +1,8 @@
 import { profileAPI } from "../api/api";
 
 const ADD_POST = 'ADD-POST';
+const DELETE_POST = 'DELETE-POST';
+const EDIT_POST = 'EDIT-POST';
 const SET_STATUS = 'SET-STATUS';
 const SET_LIKE = 'SET-LIKE';
 
@@ -58,14 +60,35 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         posts: [newPost, ...state.posts],
       };
+    case DELETE_POST:
+      const filteredPosts = state.posts.filter(p => p.id !== action.payload.id);
+      console.log(filteredPosts);
+      return {
+        ...state,
+        posts: filteredPosts
+      };
+    case EDIT_POST:
+      const updPosts = state.posts.map(post => {
+        if (post.id === action.payload.id) {
+          return {
+            ...post,
+            message: action.payload.message,
+          };
+        }
+        return post;
+      });
+      return {
+        ...state,
+        posts: updPosts,
+      };
     case SET_STATUS:
       return {
         ...state,
         status: action.status,
       };
     case SET_LIKE:
-    const { id, like } = action.payload;
-    const updatedPosts = state.posts.map(post => {
+      const { id, like } = action.payload;
+      const updatedPosts = state.posts.map(post => {
       if (post.id === id) {
         return {
           ...post,
@@ -87,7 +110,9 @@ const profileReducer = (state = initialState, action) => {
 // Action creators
 export const addPost = (message, currentDate) => ({type: ADD_POST, payload: { message, currentDate }});
 export const setStatus = (status) => ({type: SET_STATUS, status});
-export const setLikeAC = (id, like) => ({type: SET_LIKE, payload: { id, like }}) 
+export const setLikeAC = (id, like) => ({type: SET_LIKE, payload: { id, like }})
+export const deletePostAC = (id) => ({ type: DELETE_POST, payload: {id} });
+export const editPostAC = (id, message) => ({type: EDIT_POST, payload: { id, message }});
 
 // Thunks
 export const getStatus = (userId) => {
