@@ -1,5 +1,4 @@
 const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 let initialState = {
   dialogs: [
@@ -8,6 +7,8 @@ let initialState = {
     {id: 3, name: 'Murphy', surname: 'Cooper', avaPath: 'https://i.pinimg.com/originals/cb/26/f8/cb26f8e51ee5679fe97791de3c6c5d89.png'},
     {id: 4, name: 'Dr. Mann', surname: '', avaPath: 'https://www.looper.com/img/gallery/the-real-reason-matt-damons-interstellar-role-was-kept-a-secret/intro-1588026610.jpg'},
     {id: 5, name: 'Romilly', surname: '', avaPath: 'https://pbs.twimg.com/media/DM8zhSvUQAAxOuY.jpg:large'},
+    {id: 6, name: 'TARS', surname: '', avaPath: 'https://w0.peakpx.com/wallpaper/545/464/HD-wallpaper-tars-ai-christopher-nolan-interstellar-nolan-robot.jpg'},
+    {id: 7, name: 'Murphy', surname: 'Cooper', avaPath: 'https://i.pinimg.com/originals/cb/26/f8/cb26f8e51ee5679fe97791de3c6c5d89.png'},
   ],
 
   messages: [
@@ -19,14 +20,19 @@ let initialState = {
 
 const dialogsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_MESSAGE: return { 
+    case ADD_MESSAGE: 
+    const newMessage = {
+      id: state.messages.length + 1,
+      message: action.payload.text,
+    };
+    return {
       ...state,
-      messages: [...state.messages, { id: 0, message: action.text }],
+      messages: [newMessage, ...state.messages],
     };
     default: return state;
   }
 };
 
-export const addMessageAC = (text) => ({ type: ADD_MESSAGE, text });
+export const addMessageAC = (message) => ({ type: ADD_MESSAGE, payload: {message} });
 
 export default dialogsReducer;

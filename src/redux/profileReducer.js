@@ -63,10 +63,8 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         status: action.status,
       };
-    
     case SET_LIKE:
     const { id, like } = action.payload;
-    console.log(action.payload);
     const updatedPosts = state.posts.map(post => {
       if (post.id === id) {
         return {
@@ -81,20 +79,14 @@ const profileReducer = (state = initialState, action) => {
       ...state,
       posts: updatedPosts,
     };
-      
     default:
       return state;
   }
 };
 
 // Action creators
-export const addPost = (message, currentDate) => ({
-  type: ADD_POST,
-  payload: { message, currentDate },
-});
-
-export const setStatus = (status) => ({ type: SET_STATUS, status });
-
+export const addPost = (message, currentDate) => ({type: ADD_POST, payload: { message, currentDate }});
+export const setStatus = (status) => ({type: SET_STATUS, status});
 export const setLikeAC = (id, like) => ({type: SET_LIKE, payload: { id, like }}) 
 
 // Thunks
