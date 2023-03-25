@@ -1,12 +1,16 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import c from './Post.module.scss';
+import { setLikeAC as putLikesToStore } from '../../../../redux/profileReducer';
 
-const Post = ({ id, message, likeCounter, login, avatarImg, currentDate }) => {
-  const [likes, setLikes] = useState(likeCounter);
-  const [liked, setLiked] = useState(false);
+const Post = ({ id, message, likeCounter, isLiked, login, avatarImg, currentDate }) => {
+  const [likesCount, setLikesCount] = useState(likeCounter);
+  const [liked, setLiked] = useState(isLiked);
+  const dispatch = useDispatch();
 
   const handleLikeToggle = () => {
-    liked ? setLikes(likes - 1) : setLikes(likes + 1);
+    dispatch(putLikesToStore(id, !liked))
+    liked ? setLikesCount(likesCount - 1) : setLikesCount(likesCount + 1);
     setLiked(!liked);
   }
 
@@ -32,7 +36,7 @@ const Post = ({ id, message, likeCounter, login, avatarImg, currentDate }) => {
           type='button'
           onClick={handleLikeToggle}
         >
-          {liked ? '❤️' : '🤍'} {likes}
+          {isLiked ? '❤️' : '🤍'} {likesCount}
         </button>
       </div>
     </div>

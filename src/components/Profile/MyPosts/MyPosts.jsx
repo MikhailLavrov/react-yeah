@@ -36,6 +36,7 @@ export const MyPosts = ({login, avatarImg}) => {
       message={post.message}
       currentDate={post.currentDate}
       likeCounter={post.likeCounter}
+      isLiked={post.isLiked}
       login={login}
       avatarImg={avatarImg}
     />
