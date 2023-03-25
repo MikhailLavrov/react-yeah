@@ -11,15 +11,24 @@
   grid-template-columns: 1fr auto;
 
   position: relative;
+  border-bottom: 1px solid rgba($color-default-contrast-1, 0.5);
 }
 
 .myposts__addinput {
   padding: 15px 20px;
-  width: 100%;
+  width: 100%;min-height: 50px;
 
   font-size: 16px;
   outline: none;
   border: none;
+  resize: vertical;
+}
+
+.myposts__charCount {
+  position: absolute;
+  bottom: 0;
+  right: 45px;
+  font-size: 10px;
 }
 
 .myposts__error {
@@ -28,6 +37,7 @@
   right: 0;
   border: 1px solid $color-default-contrast-2;
   border-radius: 10px;
+  border-bottom-right-radius: 0;
   padding: 5px;
   color: $color-default-contrast-1;
   background-color: $color-default-white;

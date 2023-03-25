@@ -14,7 +14,10 @@ const Profile = () => {
           login={auth.login}
           avatarImg={auth.avatarImg}
           />
-        <MyPosts />
+        <MyPosts 
+          login={auth.login}
+          avatarImg={auth.avatarImg} 
+          />
       </div>
     </section>
   );

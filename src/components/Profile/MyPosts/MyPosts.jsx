@@ -4,7 +4,7 @@ import c from './MyPosts.module.scss';
 import Post from './Post/Post';
 import { addPost } from '../../../redux/profileReducer';
 import * as yup from 'yup';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage, useFormikContext } from 'formik';
 
 const newPostSchema = yup.object({
   newPost: yup
@@ -12,24 +12,44 @@ const newPostSchema = yup.object({
     .max(200, 'Too long. Max length is 200.'),
 });
 
-export const MyPosts = () => {
-  const randomNum = new Date().getTime() % 9000 + 1000;
+export const MyPosts = ({login, avatarImg}) => {
   const dispatch = useDispatch();
+
+  const MyField = ({ ...props }) => {
+    const { values } = useFormikContext();
+    const charCount = values.newPost.length;
+  
+    return (
+      <>
+        <Field className={c.myposts__addinput} {...props} />
+        {charCount > 150 &&
+        <span className={c.myposts__charCount}>{charCount}/200</span>}
+      </>
+    );
+  };
   
   const statePosts = useSelector((state) => state.profilePage.posts);
   const posts = statePosts.map((post) => (
     <Post
-      message={post.message}
-      likeCounter={post.likeCounter}
+      key={post.id}
       id={post.id}
+      message={post.message}
+      currentDate={post.currentDate}
+      likeCounter={post.likeCounter}
+      login={login}
+      avatarImg={avatarImg}
     />
   ));
 
+
   const onSubmitHandle = (values, { resetForm }) => {
     const { newPost } = values;
-    newPost !== '' && dispatch(addPost(randomNum, newPost));
+    const currentDate = new Date().toLocaleString();
+
+    newPost !== '' && dispatch(addPost(newPost, currentDate));
     resetForm();
   };
+  
 
   return (
     <div className={c.myposts}>
@@ -42,12 +62,11 @@ export const MyPosts = () => {
         >
           {({ isSubmitting }) => (
           <Form className={c.myposts__addForm}>
-            <Field
-              className={c.myposts__addinput}
+            <MyField 
               type="text"
+              maxLength="200"
               name="newPost"
-              placeholder="Write a message..."
-            />
+              placeholder="Write a message..." />
             <ErrorMessage className={c.myposts__error} name="newPost" component="span" />
             <button className={c.myposts__addButton} type="submit" disabled={isSubmitting}>&#9668;</button>
           </Form>

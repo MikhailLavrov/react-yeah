@@ -1,37 +1,59 @@
+@import '../../../../styles/vars.scss';
+
 .post {
-  padding: 10px;
+  padding: 20px;
+  margin-bottom: 5px;
+
+  box-shadow: 0 10px 20px -25px $color-default-contrast-2;
+}
+
+// header
+.post__header {
+  margin-bottom: 20px;
 
   display: flex;
   align-items: center;
-  gap: 10px;
-
-  color: aliceblue;
-  
-  background-color: rgba(25, 58, 47, 0.5);
-  box-shadow: 0px 6px 15px -10px #000000;
-
-  font-weight: 500;
-  text-shadow: none;
-  border-radius: 10px;
+  gap: 20px;
 }
 
-.post img {
-  height: 50px;
-  width: auto;
-  
-  aspect-ratio: 1;
-  background-color: rgb(215, 240, 250);
-  border-radius: 10px;
-  object-fit: cover;
+.post__headerImage {
+  display: flex;
+  align-items: center;
 }
 
-.post__likecounter {
-  margin-left: auto;
-  
-  align-self: flex-end;
+.post__headerImage img {
+  border-radius: 50%;
+}
+
+// .post__headerBio {}
+
+.post__login {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+// .post__date {}
+
+// // body
+.post__body {
+  margin-bottom: 20px;
+}
+
+.post__message {
+  margin: 0;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5;
+}
+
+// // footer
+// .post__footer {}
+
+.post__likeButton {
+  border: none;
+  outline: none;
+  background-color: transparent;
   cursor: pointer;
-
-  &:hover {
-    color: brown;
-  }
+  user-select: none;
 }
