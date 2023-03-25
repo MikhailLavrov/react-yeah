@@ -6,33 +6,34 @@ const SET_STATUS = 'SET-STATUS';
 let initialState = {
   posts: [
     {
-      id: 1,
-      message: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam aspernatur repellendus vero incidunt accusantium aperiam, nihil, odit eveniet amet autem commodi ipsam inventore dicta quae reiciendis sint eum perferendis!',
-      likeCounter: 0
-      },
-      {
-        id: 2,
-        message: 'Hello humans!',
-        likeCounter: 0,
-        currentDate: 2
+    id: 1,
+    message: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam aspernatur repellendus vero incidunt accusantium aperiam, nihil, odit eveniet amet autem commodi ipsam inventore dicta quae reiciendis sint eum perferendis!',
+    likeCounter: 0,
+    currentDate: '17.03.2023, 10:52:20',
+    },
+    {
+      id: 2,
+      message: 'Hello humans!',
+      likeCounter: 0,
+      currentDate: '10.03.2023, 16:32:10',
     },
     {
       id: 3,
       message: 'Are u here?',
       likeCounter: 12,
-      currentDate: null
+      currentDate: '06.03.2023, 07:12:22',
     },
     {
       id: 4,
       message: 'Does anybody hear me?',
       likeCounter: 2,
-      currentDate: null,
+      currentDate: '02.03.2023, 02:31:19',
     },
     {
       id: 5,
       message: 'Damn... 🥲',
       likeCounter: 2,
-      currentDate: null
+      currentDate: '15.02.2023, 12:11:17',
     },
   ],
   status: '',
