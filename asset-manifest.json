@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-yeah/static/css/main.0077adb2.css",
-    "main.js": "/react-yeah/static/js/main.abced349.js",
+    "main.css": "/react-yeah/static/css/main.7d7654c3.css",
+    "main.js": "/react-yeah/static/js/main.1b9ebd8d.js",
     "static/js/787.4e97c1a5.chunk.js": "/react-yeah/static/js/787.4e97c1a5.chunk.js",
     "static/media/Intersect.png": "/react-yeah/static/media/Intersect.942c25aed0b5c9827e39.png",
     "static/media/logo-textless.png": "/react-yeah/static/media/logo-textless.d32355c79c4a4aee4b1b.png",
@@ -21,12 +21,12 @@
     "index.html": "/react-yeah/index.html",
     "static/media/news.svg": "/react-yeah/static/media/news.8bf0b5e4627e80d7d0ccd1227576b7f7.svg",
     "static/media/users.svg": "/react-yeah/static/media/users.21bcdee0b90ff3693b02f83b6f5c43b4.svg",
-    "main.0077adb2.css.map": "/react-yeah/static/css/main.0077adb2.css.map",
-    "main.abced349.js.map": "/react-yeah/static/js/main.abced349.js.map",
+    "main.7d7654c3.css.map": "/react-yeah/static/css/main.7d7654c3.css.map",
+    "main.1b9ebd8d.js.map": "/react-yeah/static/js/main.1b9ebd8d.js.map",
     "787.4e97c1a5.chunk.js.map": "/react-yeah/static/js/787.4e97c1a5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0077adb2.css",
-    "static/js/main.abced349.js"
+    "static/css/main.7d7654c3.css",
+    "static/js/main.1b9ebd8d.js"
   ]
 }
