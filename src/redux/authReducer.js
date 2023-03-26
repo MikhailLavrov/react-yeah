@@ -38,13 +38,15 @@ export const getAuthProfile = () => {
   }
 }
 
-export const loginThunk = (email, password, rememberMe) => {
+export const loginThunk = (email, password, rememberMe, setStatus) => {
   return (dispatch) => {
     authAPI.login(email, password, rememberMe)
       .then(response => response.data)
       .then(data => {
         if (data.resultCode === 0) {
           dispatch(getAuthProfile())
+        } else {
+          setStatus(data.messages)
         }
       })
   }

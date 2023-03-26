@@ -38,13 +38,13 @@ export const ProfileStatus = () => {
         <span className={c.status__text}>{status}</span>
       ) : (
         <input
-        className={c.status__input}
-        autoFocus
-        onBlur={deactivateEditMode}
-        onKeyDown={(e) => e.key === 'Enter' && deactivateEditMode()}
-        value={status}
-        maxLength={40}
-        onChange={onStatusChange}
+          className={c.status__input}
+          autoFocus
+          onBlur={deactivateEditMode}
+          onKeyDown={(e) => e.key === 'Enter' && deactivateEditMode()}
+          value={status}
+          maxLength={40}
+          onChange={onStatusChange}
         />
       )}
       <button className={c.status__button} 

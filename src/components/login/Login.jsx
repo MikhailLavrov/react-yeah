@@ -19,8 +19,8 @@ let loginSchema = yup.object({
 const Login = () => {
   const dispatch = useDispatch();
 
-  const onSubmit = (values, { setSubmitting }) => {
-    dispatch(loginThunk(values.email, values.password, values.rememberMe));
+  const onSubmit = (values, { setSubmitting, setStatus }) => {
+    dispatch(loginThunk(values.email, values.password, values.rememberMe, setStatus));
     setSubmitting(false);
   };
 
@@ -43,7 +43,7 @@ const Login = () => {
         initialValues={{ email: '', password: '', rememberMe: false }}
         onSubmit={onSubmit}
       >
-        {({ isSubmitting }) => (
+        {({ isSubmitting, status }) => (
           <Form className={c.login__form}>
             <div className={c.login__inputWrapper}>
               <Field type="email" name="email" placeholder='Enter email' />
@@ -53,6 +53,7 @@ const Login = () => {
               <Field type="password" name="password" placeholder='Enter password' />
               <ErrorMessage name="password" component="span" />
             </div>
+            <div className={c.login__status}>{status}</div>
             <div className={c.login__remember}>
               <Field type="checkbox" name="rememberMe" id="rememberMe" />
               <label htmlFor="rememberMe">Remember me</label>

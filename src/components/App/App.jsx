@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import c from './App.module.scss';
-import Profile from '../Profile/Profile';
-import Music from '../Music/Music';
-import News from '../News/News';
-import Settings from '../Settings/Settings';
-import Dialogs from '../Dialogs/Dialogs';
-import Users from '../Users/Users';
-import UserProfile from '../Users/UserProfile/UserProfile';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAuthProfile } from '../../redux/authReducer';
+import c from './App.module.scss';
+import News from '../News/News';
 import Login from '../Login/Login';
+import Music from '../Music/Music';
+import Users from '../Users/Users';
 import Layout from '../Layout/Layout';
+import Profile from '../Profile/Profile';
+import Dialogs from '../Dialogs/Dialogs';
+import Settings from '../Settings/Settings';
+import UserProfile from '../Users/UserProfile/UserProfile';
 
 const App = () => {
   const dispatch = useDispatch();
