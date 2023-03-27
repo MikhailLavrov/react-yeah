@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import c from './Login.module.scss';
 import * as yup from 'yup';
 import { loginThunk } from '../../redux/authReducer';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import LOGIN_MASCOT from '../../assets/login-mascot.png';
 
 let loginSchema = yup.object({
@@ -18,9 +18,10 @@ let loginSchema = yup.object({
 
 const Login = () => {
   const dispatch = useDispatch();
+  const captchaUrl = useSelector(state => state.auth.captchaUrl);
 
   const onSubmit = (values, { setSubmitting, setStatus }) => {
-    dispatch(loginThunk(values.email, values.password, values.rememberMe, setStatus));
+    dispatch(loginThunk(values.email, values.password, values.rememberMe, values.captcha, setStatus));
     setSubmitting(false);
   };
 
@@ -40,7 +41,7 @@ const Login = () => {
       </div>
       <Formik
         validationSchema={loginSchema}
-        initialValues={{ email: '', password: '', rememberMe: false }}
+        initialValues={{ email: '', password: '', rememberMe: false, captcha: '' }}
         onSubmit={onSubmit}
       >
         {({ isSubmitting, status }) => (
@@ -54,6 +55,12 @@ const Login = () => {
               <ErrorMessage name="password" component="span" />
             </div>
             <div className={c.login__status}>{status}</div>
+            {captchaUrl && 
+              <>
+                <img src={captchaUrl} alt="captchaImg" />
+                <Field type="text" name="captcha" placeholder='Captcha' />
+              </>
+            }
             <div className={c.login__remember}>
               <Field type="checkbox" name="rememberMe" id="rememberMe" />
               <label htmlFor="rememberMe">Remember me</label>
