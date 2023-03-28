@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAuthProfile } from '../../redux/authReducer';
 import c from './App.module.scss';
 import News from '../News/News';
 import Login from '../Login/Login';
@@ -12,15 +11,16 @@ import Profile from '../Profile/Profile';
 import Dialogs from '../Dialogs/Dialogs';
 import Settings from '../Settings/Settings';
 import UserProfile from '../Users/UserProfile/UserProfile';
+import { initializeApp } from '../../redux/authReducer';
 
 const App = () => {
   const dispatch = useDispatch();
   const authorized = useSelector(state => state.auth.isAuth);
 
   useEffect(() => {
-    dispatch(getAuthProfile());
+    dispatch(initializeApp());
   }, [dispatch])
-
+  
   return (
     <div className={c.app}>
         <Routes>

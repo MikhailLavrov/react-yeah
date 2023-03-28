@@ -14,11 +14,11 @@ const Dialogs = () => {
     <DialogItem name={dialog.name} 
                 surname={dialog.surname} 
                 avaPath={dialog.avaPath} 
-                id={dialog.id} />)
+                key={dialog.id} />)
 
   let messagesElements = dialogsPage.messages.map(message => 
     <Message message={message.message} 
-             id={message.id}/>)
+             key={message.id}/>)
 
   const onMessageChange = (event) => {
     setNewMessageText(event.target.value);

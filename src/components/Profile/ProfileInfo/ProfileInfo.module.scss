@@ -6,13 +6,29 @@
 
 .profileInfo__description {
   padding: 20px;
+
   background-color: $color-default-white;
 }
 
-.profileInfo__avatar {
+.profileInfo__followers {
+  text-align: right;
+  position: absolute;
+  right: 20px;
+
+  & ul {
+    justify-content: flex-end;
+  }
+}
+
+.profileInfo__bio {
+  width: 100%;
+}
+
+.profileInfo__headLine {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
+  position: relative;
 
   background: linear-gradient(transparent 50%, $color-default-white 0%);
 }

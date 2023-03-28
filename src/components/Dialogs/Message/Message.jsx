@@ -1,9 +1,9 @@
 import c from './Message.module.scss';
 
-function Message(props) {
+function Message({id, message}) {
   return (
-    <li className={c.dialogs__message} key={props.id}>
-      {props.message}
+    <li className={c.dialogs__message} key={id}>
+      {message}
     </li>
   )
 }

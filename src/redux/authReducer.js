@@ -4,8 +4,10 @@ import DEFAULT_AVATAR from '../assets/default-avatar.jpg';
 
 const SET_USER_DATA = 'SET-USER-DATA';
 const SET_CAPTCHA = 'SET-CAPTCHA';
+const INIT_SUCCESS = 'INIT-SUCCESS';
 
 let initialState = {
+  initialized: false,
   id: null,
   login: null,
   email: null,
@@ -24,6 +26,10 @@ const authReducer = (state = initialState, action) => {
       ...state,
       captchaUrl: action.payload.captchaUrl,
     };
+    case INIT_SUCCESS: return {
+      ...state,
+      initialized: true,
+    }
     default: return state;
   }
 };
@@ -31,8 +37,17 @@ const authReducer = (state = initialState, action) => {
 //  Action creators
 export const setAuthUserData = (id, login, email, isAuth) => ({ type: SET_USER_DATA, payload: {id, login, email, isAuth} });
 export const setCaptchaURL = (captchaUrl) => ({ type: SET_CAPTCHA, payload: {captchaUrl} });
+export const initSuccess = () => ({type: INIT_SUCCESS})
 
 //  Thunks
+export const initializeApp = () => {
+  return (dispatch) => {
+    let promise = dispatch(getAuthProfile());
+    Promise.all([promise])
+      .then(() => dispatch(initSuccess()));
+  }
+}
+
 export const getAuthProfile = () => {
   return (dispatch) => {
     authAPI.getAuth()
